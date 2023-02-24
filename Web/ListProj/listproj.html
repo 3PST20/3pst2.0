@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+	<head>
+		<title>Lista de projetos</title>
+		<!--CSS-->
+		<meta charset="utf-8">
+		<link rel="stylesheet" href="../../img/bootstrap-5.2.2-dist/bootstrap.min.css">
+		<link rel="stylesheet" href="../../img/bootstrap-5.2.2-dist/bootstrap-grid.rtl.min.css">
+		<link rel="aoercut icon" href="../../img/3PSTb.png" sizes="32x32" type="image/png">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+	</head>
+	<body>
+		<!--Cabeçalho da page-->
+		<header>
+			<!--Cor e formato-->
+			<nav class="navbar navbar-expand-lg bg-light">
+				<div class="container-fluid">
+					<!--Logos-->
+					<div class="col-md-2"><a class="navbar-brand" href="#"><img id="logo" src="../../img/logo_NoneB.png" width="70px" disable><img class="imglogin" src="../../img/3PSTb.png" disable></a></div>
+					<!--Botão 'recursivo'-->
+					<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+						<span class="navbar-toggler-icon"></span>
+					</button>
+					<!--Dropdown/ menu-->
+					<div class="collapse navbar-collapse" id="navbarSupportedContent">
+						<ul class="navbar-nav me-auto mb-2 mb-lg-0">
+							<!--'menu': Home-->
+							<li class="nav-item"><a class="nav-link active" aria-current="page" href="#">Home</a></li>
+							<!--'menu': Cadastrar-->
+							<li class="nav-item dropdown">
+								<a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Cadastrar</a>
+								<ul class="dropdown-menu">
+									<li><a class="dropdown-item" href="#">Novo projeto</a></li>
+									<li><a class="dropdown-item" href="#">Novo programa</a></li>
+									<li><hr class="dropdown-divider"></li>
+									<li><a class="dropdown-item" href="#">Novo colaborador INPE</a></li>
+									<li><a class="dropdown-item" href="#">Novo colaborador externo</a></li>
+									<li><a class="dropdown-item" href="#">Nova organização externa</a></li>
+								</ul>
+							</li>
+							<!--'menu': Relatórios-->
+							<li class="nav-item dropdown">
+								<a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Relatórios</a>
+								<ul class="dropdown-menu">
+									<li><a class="dropdown-item" href="#">Lista de projetos</a></li>
+									<li><a class="dropdown-item" href="#">Relatório A4 projetos</a></li>
+									<li><hr class="dropdown-divider"></li>
+									<li><a class="dropdown-item" href="#">Lista de programas</a></li>
+									<li><a class="dropdown-item" href="#">Projetos x Programas</a></li>
+								</ul>
+							</li>
+							<!--'menu': Gráficos-->
+							<li class="nav-item dropdown">
+								<a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Gráficos</a>
+								<ul class="dropdown-menu">
+									<li><a class="dropdown-item" href="#">Geral</a></li>
+									<li><hr class="dropdown-divider"></li>
+									<li><a class="dropdown-item" href="#">Sintético geral</a></li>
+									<li><a class="dropdown-item" href="#">Iniciativas no portfólio</a></li>
+								</ul>
+							</li>
+							<!--'menu': Ajuda-->
+							<li class="nav-item dropdown">
+								<a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Ajuda</a>
+								<ul class="dropdown-menu">
+									<li><a class="dropdown-item" href="#">Tutorial</a></li>
+									<li><a class="dropdown-item" href="#">Dúvidas frequentes</a></li>
+									<li><hr class="dropdown-divider"></li>
+									<li><a class="dropdown-item" href="#">Opiniões e perguntas</a></li>
+								</ul>
+							</li>
+						</ul>
+						<br>
+						<!--Canto direito superior-->
+						<form class="d-flex justify-content-center" role="search">
+							<!--Buscar-->
+							<input class="form-control me-1" type="search" placeholder="Buscar" aria-label="Search">
+							<button class="btn btn-outline-success me-1" type="submit">Buscar</button>
+							<!--Logout-->
+							<div class="switch__container">
+								<a class="btn" href="#"><img id="out" src="../../img/logout.png" width="30px"></a>
+							</div>
+						</form>
+					</div>
+				</div>
+			</nav>
+		</header>
+		<br>
+		<!--Título-->
+		<h3 style="text-align: center;">Lista de projetos</h3>
+		<!--Cor do cabeçalho da tabela-->
+		<table class="table table-hover table-bordered">
+			<!--Edit 'button'-->
+			<div class="container-fluid" style="text-align: right;">
+				<a class="button" href="#" style="text-decoration: none; color: black;"><img id="edit1" src="../../img/edit1.png" width="30px"></a>
+			</div>
+			<br>
+			<!--Tabela-->
+			<thead>
+				<!--Nome das colunas-->
+				<tr>
+					<th scope="col">Nome do projeto</th>
+					<th scope="col">Responsável</th>
+					<th scope="col">Unidade responsável</th>
+					<th scope="col">Processo SEI</th>
+					<th scope="col">Categoria do projeto</th>
+					<th scope="col">Situação do projeto</th>
+					<th scope="col">Situação do TAP</th>
+					<th scope="col">Tipo de parceria</th>
+					<th scope="col">Processo SEI parceria</th>
+					<th scope="col">Prioridade</th>
+				</tr>
+			</thead>
+			<!--Corpo da tabela-->
+			<tbody>
+				<tr>
+					<th scope="row">1</th>
+					<td>Mark</td>
+					<td>Otto</td>
+					<td>@mdo</td>
+					<td>Jacob</td>
+					<td>Thornton</td>
+					<td>@fat</td>
+					<td>Mark</td>
+					<td>Otto</td>
+					<td>@mdo</td>
+				</tr>
+				<tr>
+					<th scope="row">2</th>
+					<td>Jacob</td>
+					<td>Thornton</td>
+					<td>@fat</td>
+					<td>Mark</td>
+					<td>Otto</td>
+					<td>@mdo</td>
+					<td>Jacob</td>
+					<td>Thornton</td>
+					<td>@fat</td>
+				</tr>
+				<tr>
+					<th scope="row">3</th>
+					<td colspan="2">Larry the Bird</td>
+					<td>@twitter</td>
+					<td>Jacob</td>
+					<td>Thornton</td>
+					<td>@fat</td>
+					<td>Mark</td>
+					<td>Otto</td>
+					<td>@mdo</td>
+				</tr>
+			</tbody>
+		</table>
+		<!--Passar page-->
+		<nav aria-label="Page navigation example">
+			<ul class="pagination justify-content-center">
+				<li class="page-item active"><a class="page-link" href="#">1</a></li>
+				<li class="page-item"><a class="page-link" href="#">2</a></li>
+				<li class="page-item"><a class="page-link" href="#">3</a></li>
+			</ul>
+		</nav>
+		<!--Rodapé cor-->
+		<div class="footer-dark">
+			<!--Inicio do conteudo do rodapé-->
+			<footer>
+				<div class="container">
+					<div class="row">
+						<!--Coluna Cadastrar-->					
+						<div class="col-sm-6 col-md-2 item">
+							<h3>Cadastrar</h3>
+							<ul>
+								<li><a href="#">Novo projeto</a></li>
+								<li><a href="#">Novo programa</a></li>
+								<li><a href="#">Novo colaborador INPE</a></li>
+								<li><a href="#">Novo colaborador externo</a></li>
+								<li><a href="#">Nova organização externa</a></li>
+							</ul>
+						</div>
+						<!--Coluna Relatórios-->
+						<div class="col-sm-6 col-md-2 item">
+							<h3>Relatórios</h3>
+							<ul>
+								<li><a href="#">Lista de projetos</a></li>
+								<li><a href="#">Relatório A4 projetos</a></li>
+								<li><a href="#">Lista de programas</a></li>
+								<li><a href="#">Projetos x Programas</a></li>
+							</ul>
+						</div>
+						<!--Coluna Gráficos-->
+						<div class="col-sm-6 col-md-2 item">
+							<h3>Gráficos</h3>
+							<ul>
+								<li><a href="#">Geral</a></li>
+								<li><a href="#">Sintético geral</a></li>
+								<li><a href="#">Iniciativas no portfólio</a></li>
+							</ul>
+						</div>
+						<!--Coluna Ajuda-->
+						<div class="col-sm-6 col-md-2 item">
+							<h3>Ajuda</h3>
+							<ul>
+								<li><a href="#">Tutorial</a></li>
+								<li><a href="#">Dúvidas frequentes</a></li>
+								<li><a href="#">Opiniões e perguntas</a></li>
+							</ul>
+						</div>
+						<!--Frase Motivacional-->
+						<div class="col-md-4 item text">
+							<h3>Motivação:</h3>
+							<p>Nunca esqueça as maravilhas que Deus faz. - Salmos 78:4</p>
+						</div>
+						<!--'Bolinhas' de link-->
+						<div class="col item social">
+							<a href="https://pt-br.facebook.com/inpe.oficial/"><img id="logo" src="../../img/facebook.png" width="30px"></a>
+							<a href="https://www.instagram.com/inpe.oficial/"><img id="logo" src="../../img/instagram.png" width="30px"></a>
+							<a href="https://twitter.com/inpe_mct"><img id="logo" src="../../img/twitter.png" width="30px"></a>
+							<a href="https://www.youtube.com/user/inpemct"><img id="logo" src="../../img/youtube.png" width="30px"></a>
+							<a href="https://sei.mctic.gov.br/sip/login.php?sigla_orgao_sistema=MCTI&sigla_sistema=SEI"><img id="logo" src="../../img/sei.png" width="32px"></a>
+							<a href="https://www.gov.br/inpe/pt-br"><img id="logo" src="../../img/govbr.png" width="30px"></a>
+						</div>
+					</div>
+					<!--Ref a versão, link de quem 'criou' e logo do Gov-->
+					<div class="row">
+						<div class="col-md-11"><p class="copyright">INPE - 3PST_V.2.0.0</a></p></div>
+						<div class="col-md-1"><img id="logo" src="../../img/govfed.png" width="120px" disable></div>
+					</div>
+				</div>
+			</footer>
+		</div>
+		<!--JS-->
+		<script type="public/js/jquery.min.js"></script>
+		<script type="public/js/bootstrap.bundle.min.js"></script>
+	</body>
+</html>

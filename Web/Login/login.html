@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+	<head>
+		<title>Login</title>
+		<!--CSS-->
+		<meta charset="utf-8">
+		<link rel="stylesheet" href="../../img/bootstrap-5.2.2-dist/bootstrap.min.css">
+		<link rel="stylesheet" href="../../img/bootstrap-5.2.2-dist/bootstrap-grid.rtl.min.css">
+		<link rel="stylesheet" href="style.css">
+		<link rel="aoercut icon" href="../../img/3PSTb.png" sizes="32x32" type="image/png">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<style type="text/css" class="bg-img">body{background-image: url("../../img/andromeda.jpg");}</style>
+	</head>
+	<body>
+		<!--Chamada p/ criar o card-->
+		<form class="form" action="3pst.br/login">
+			<div class="card">
+				<!--P/ chamar no CSS topo-->
+				<div class="card-top">
+					<img class="imglogin" src="../../img/logo_NoneB.png">
+					<img class="imglogin" src="../../img/3PSTb.png">
+					<br><br>
+					<h2 class="textop">Login</h2>
+				</div>
+				<!--E-mail do INPE-->
+				<div class="card-group">
+					<label>E-mail</label>
+					<input type="email" name="email" placeholder="Seu e-mail institucional" required>
+				</div>
+				<!--Senha-->
+				<div class="card-group">
+					<label>Senha</label>
+					<input type="password" name="senha" placeholder="Qual sua senha?" required>
+				</div>
+				<!--Chech box p/ lembrar-->
+				<div class="card-group">
+					<label><input type="checkbox"> Lembre de mim ;)</label>
+				</div>
+				<!--Botão de login-->
+				<div class="card-group btn" style="border: hidden;">
+					<button type="submit" id="acessar">ENTRAR</button>
+				</div>
+				<br>
+				<!--Link p/ recuperar senha-->
+				<div class="main-link">
+					<a href="#" style="text-decoration: none;">Esqueceu a sua senha?</a>
+				</div>
+				<br>
+				<!--Botão de cadastrar-->
+				<div class="card-down btn-down" style="border: hidden;">
+					<button type="submit" id="criar">Criar conta</button>
+				</div>
+			</div>
+		</form>
+		<!--Rodapé-->
+		<footer>
+			<div class="container" style="text-align: center;">
+				<img id="logo" src="../../img/govfed.png" width="150px" disable>
+			</div>
+		</footer>
+		<!--JS-->
+		<script type="../../bootstrap-5.2.2-dist/js/jquery.min.js"></script>
+		<script type="../../bootstrap-5.2.2-dist/js/bootstrap.bundle.min.js"></script>
+	</body>
+</html>

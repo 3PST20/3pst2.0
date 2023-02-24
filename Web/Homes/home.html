@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+	<head>
+		<title>Home</title>
+		<!--CSS-->
+		<meta charset="utf-8">
+		<link rel="stylesheet" href="../../img/bootstrap-5.2.2-dist/bootstrap.min.css">
+		<link rel="stylesheet" href="../../img/bootstrap-5.2.2-dist/bootstrap-grid.rtl.min.css">
+		<link rel="stylesheet" type="text/css" href="style.css">
+		<link rel="aoercut icon" href="../../img/3PSTb.png" sizes="32x32" type="image/png">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+	</head>
+	<body>
+		<!--Cabeçalho da page-->
+		<header>
+			<!--Cor e formato-->
+			<nav class="navbar navbar-expand-lg bg-light">
+				<div class="container-fluid">
+					<!--Logos-->
+					<div class="col-md-2"><a class="navbar-brand" href="#"><img id="logo" src="../../img/logo_NoneB.png" width="70px" disable><img class="imglogin" src="../../img/3PSTb.png" disable></a></div>
+					<!--Botão 'recursivo'-->
+					<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+						<span class="navbar-toggler-icon"></span>
+					</button>
+					<!--Dropdown/ menu-->
+					<div class="collapse navbar-collapse" id="navbarSupportedContent">
+						<ul class="navbar-nav me-auto mb-2 mb-lg-0">
+							<!--'menu': Home-->
+							<li class="nav-item"><a class="nav-link active" aria-current="page" href="#">Home</a></li>
+							<!--'menu': Cadastrar-->
+							<li class="nav-item dropdown">
+								<a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Cadastrar</a>
+								<ul class="dropdown-menu">
+									<li><a class="dropdown-item" href="#">Novo projeto</a></li>
+									<li><a class="dropdown-item" href="#">Novo programa</a></li>
+									<li><hr class="dropdown-divider"></li>
+									<li><a class="dropdown-item" href="#">Novo colaborador INPE</a></li>
+									<li><a class="dropdown-item" href="#">Novo colaborador externo</a></li>
+									<li><a class="dropdown-item" href="#">Nova organização externa</a></li>
+								</ul>
+							</li>
+							<!--'menu': Relatórios-->
+							<li class="nav-item dropdown">
+								<a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Relatórios</a>
+								<ul class="dropdown-menu">
+									<li><a class="dropdown-item" href="#">Lista de projetos</a></li>
+									<li><a class="dropdown-item" href="#">Relatório A4 projetos</a></li>
+									<li><hr class="dropdown-divider"></li>
+									<li><a class="dropdown-item" href="#">Lista de programas</a></li>
+									<li><a class="dropdown-item" href="#">Projetos x Programas</a></li>
+								</ul>
+							</li>
+							<!--'menu': Gráficos-->
+							<li class="nav-item dropdown">
+								<a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Gráficos</a>
+								<ul class="dropdown-menu">
+									<li><a class="dropdown-item" href="#">Geral</a></li>
+									<li><hr class="dropdown-divider"></li>
+									<li><a class="dropdown-item" href="#">Sintético geral</a></li>
+									<li><a class="dropdown-item" href="#">Iniciativas no portfólio</a></li>
+								</ul>
+							</li>
+							<!--'menu': Ajuda-->
+							<li class="nav-item dropdown">
+								<a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Ajuda</a>
+								<ul class="dropdown-menu">
+									<li><a class="dropdown-item" href="#">Tutorial</a></li>
+									<li><a class="dropdown-item" href="#">Dúvidas frequentes</a></li>
+									<li><hr class="dropdown-divider"></li>
+									<li><a class="dropdown-item" href="#">Opiniões e perguntas</a></li>
+								</ul>
+							</li>
+						</ul>
+						<br>
+						<!--Canto direito superior-->
+						<form class="d-flex justify-content-center" role="search">
+							<!--Buscar-->
+							<input class="form-control me-1" type="search" placeholder="Buscar" aria-label="Search">
+							<button class="btn btn-outline-success me-1" type="submit">Buscar</button>
+							<!--Logout-->
+							<div class="switch__container">
+								<a class="btn" href="#"><img id="out" src="../../img/logout.png" width="30px"></a>
+							</div>
+						</form>
+					</div>
+				</div>
+			</nav>
+		</header>
+		<br>
+		<!--Meio c/ texto lado a lado-->
+		<div id="main">
+			<!--Área de infos-->
+			<div class="row g-2">
+				<!--Modelo texto-->
+				<div class="col-md">
+					<div class="col-md-6 col-sm-6">
+						<h1>Frases motivacionais</h1>
+						<p>Tudo o que fizerem, façam de todo o coração, como para o Senhor, e não para os homens, - Colossenses 3:23</p>
+						<p>O que as suas mãos tiverem que fazer, que o façam com toda a sua força, pois na sepultura, para onde você vai, não há atividade nem planejamento, não há conhecimento nem sabedoria. - Eclesiastes 9:10</p>
+					</div>
+				</div>
+				<br><br>
+				<!--Modelo texto-->
+				<div class="col-md">
+					<div class="col-md-6 col-sm-6">
+						<h1>Parte 2</h1>
+						<p>Portanto, meus amados irmãos, mantenham-se firmes, e que nada os abale. Sejam sempre dedicados à obra do Senhor, pois vocês sabem que, no Senhor, o trabalho de vocês não será inútil. - 1 Coríntios 15:58</p>
+						<p>Deus disse: de maneira alguma te deixarei, nunca, jamais te abandonarei. - Hebreus 13:5</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!--Área dos cards-->
+		<div id="middle">
+			<!--P/ ñ ficar mt disperso na page-->
+			<div class="container">
+				<div class="row">
+					<!--Card 1-->
+					<div class="col-sm-2 col-md-4">
+						<div class="card text-center" style="width: 25rem;">
+							<img src="" class="card-img-top" alt="Grafico1">
+							<div class="card-body">
+								<h3 class="card-title">Gráfico geral</h3>
+								<p class="card-text">Em caso de urgencia, como reuniões importantes, baixe sem demora</p>
+								<a href="#" class="btn btn-outline-success" role="button"><img src="../../img/download.png" width="30px"> Download</a>
+							</div>
+						</div>
+					</div>
+					<!--Card 2-->
+					<div class="col-sm-2 col-md-4">
+						<div class="card text-center" style="width: 25rem;">
+							<img src="" class="card-img-top" alt="Grafico2">
+							<div class="card-body">
+								<h3 class="card-title">Gráfico sintético</h3>
+								<p class="card-text">Não é bom demorar em urgencias, download rápido abaixo</p>
+								<a href="#" class="btn btn-outline-success" role="button"><img src="../../img/download.png" width="30px"> Download</a>
+							</div>
+						</div>
+					</div>
+					<!--Card 3-->
+					<div class="col-sm-2 col-md-4">
+						<div class="card text-center" style="width: 25rem;">
+							<img src="" class="card-img-top" alt="Grafico3">
+							<div class="card-body">
+								<h3 class="card-title">Iniciativas portfolio</h3>
+								<p class="card-text">Acho que é vai ficar mais fácil assim. segue o link</p>
+								<a href="#" class="btn btn-outline-success" role="button"><img src="../../img/download.png" width="30px"> Download</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!--Rodapé cor-->
+		<div class="footer-dark">
+			<!--Inicio do conteudo do rodapé-->
+			<footer>
+				<div class="container">
+					<div class="row">
+						<!--Coluna Cadastrar-->					
+						<div class="col-sm-6 col-md-2 item">
+							<h3>Cadastrar</h3>
+							<ul>
+								<li><a href="#">Novo projeto</a></li>
+								<li><a href="#">Novo programa</a></li>
+								<li><a href="#">Novo colaborador INPE</a></li>
+								<li><a href="#">Novo colaborador externo</a></li>
+								<li><a href="#">Nova organização externa</a></li>
+							</ul>
+						</div>
+						<!--Coluna Relatórios-->
+						<div class="col-sm-6 col-md-2 item">
+							<h3>Relatórios</h3>
+							<ul>
+								<li><a href="#">Lista de projetos</a></li>
+								<li><a href="#">Relatório A4 projetos</a></li>
+								<li><a href="#">Lista de programas</a></li>
+								<li><a href="#">Projetos x Programas</a></li>
+							</ul>
+						</div>
+						<!--Coluna Gráficos-->
+						<div class="col-sm-6 col-md-2 item">
+							<h3>Gráficos</h3>
+							<ul>
+								<li><a href="#">Geral</a></li>
+								<li><a href="#">Sintético geral</a></li>
+								<li><a href="#">Iniciativas no portfólio</a></li>
+							</ul>
+						</div>
+						<!--Coluna Ajuda-->
+						<div class="col-sm-6 col-md-2 item">
+							<h3>Ajuda</h3>
+							<ul>
+								<li><a href="#">Tutorial</a></li>
+								<li><a href="#">Dúvidas frequentes</a></li>
+								<li><a href="#">Opiniões e perguntas</a></li>
+							</ul>
+						</div>
+						<!--Frase Motivacional-->
+						<div class="col-md-4 item text">
+							<h3>Motivação:</h3>
+							<p>E não nos cansemos de fazer o bem, pois no tempo próprio colheremos, se não desanimarmos. - Gálatas 6:9</p>
+						</div>
+						<!--'Bolinhas' de link-->
+						<div class="col item social">
+							<a href="https://pt-br.facebook.com/inpe.oficial/"><img id="logo" src="../../img/facebook.png" width="30px"></a>
+							<a href="https://www.instagram.com/inpe.oficial/"><img id="logo" src="../../img/instagram.png" width="30px"></a>
+							<a href="https://twitter.com/inpe_mct"><img id="logo" src="../../img/twitter.png" width="30px"></a>
+							<a href="https://www.youtube.com/user/inpemct"><img id="logo" src="../../img/youtube.png" width="30px"></a>
+							<a href="https://sei.mctic.gov.br/sip/login.php?sigla_orgao_sistema=MCTI&sigla_sistema=SEI"><img id="logo" src="../../img/sei.png" width="32px"></a>
+							<a href="https://www.gov.br/inpe/pt-br"><img id="logo" src="../../img/govbr.png" width="30px"></a>
+						</div>
+					</div>
+					<!--Ref a versão, link de quem 'criou' e logo do Gov-->
+					<div class="row">
+						<div class="col-md-11"><p class="copyright">INPE - 3PST_V.2.0.0</a></p></div>
+						<div class="col-md-1"><img id="logo" src="../../img/govfed.png" width="120px" disable></div>
+					</div>
+				</div>
+			</footer>
+		</div>
+		<!--JS-->
+		<script type="public/js/jquery.min.js"></script>
+		<script type="public/js/bootstrap.bundle.min.js"></script>
+	</body>
+</html>
