@@ -1,0 +1,828 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <title>Cadastro de projeto</title>
+    <!--CSS-->
+    <meta charset="utf-8">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <link rel="stylesheet" href="../static/css/cadastrarprojeto.css">
+    <link rel="aoercut icon" href="../static/img/3pst.png" sizes="32x32" type="image/png">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+  </head>
+
+  <body>
+    <!--Cabeçalho da page-->
+    <table class="top">
+      <tr>
+        <td style="width:100px"><a href="https://www.gov.br/inpe/pt-br"><img src="../static/img/inpelogo.png" width="90px" height="90px"></a></td>
+        <td style="width:100px"><img src="../static/img/3pst.png" width="75px"></a></td>
+        <td><h2>Sistema de Gerenciamento de Portfólio do INPE - v2.0</h2></a></td>
+      </tr>
+    </table>
+    <header>
+      <!--Cor e formato-->
+      <nav class="navbar">
+        <div class="container-fluid">
+	        <!--Botão 'recursivo'-->
+	        <!--<button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">-->
+	        <div style = "position:relative; left:900px;>
+	          <button class="button button1" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
+	            <span class="navbar-toggler-icon"></span>
+	          </button>
+	        </div>
+	        <!--Dropdown/ menu-->
+	        <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+	          <div class="offcanvas-header">
+	            <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Menu</h5>
+	            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+	          </div>
+	          <div class="offcanvas-body">
+	            <!--Canto direito superior-->
+	            <form class="d-flex mt-3" role="search">
+	              <input class="form-control me-2" type="search" aria-label="Search">
+	              <button class="btn btn-outline-success" type="submit">Buscar</button>
+	            </form>
+	            <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+	              <!--'menu': Home-->
+		            <li class="nav-item">
+		              <a class="nav-link active" aria-current="page" href="../templates/index.html">Home</a>
+		            </li>
+								<!--'menu': Cadastrar-->
+								<li class="nav-item dropdown">
+									<a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Cadastrar</a>
+									<ul class="dropdown-menu">
+										<li><a class="dropdown-item" href="../templates/cadastrarprojeto.html">Novo projeto</a></li>
+										<li><a class="dropdown-item" href="../templates/cadastrarprograma.html">Novo programa</a></li>
+										<li>
+											<hr class="dropdown-divider">
+										</li>
+										<li><a class="dropdown-item" href="../templates/cadastrarcolaboradorinpe.html">Novo colaborador INPE</a></li>
+										<li><a class="dropdown-item" href="../templates/cadastrarcolaboradorexterno.html">Novo colaborador externo</a></li>
+										<li><a class="dropdown-item" href="../templates/cadastrarorganizacaoexterna.html">Nova organização externa</a></li>
+									</ul>
+								</li>
+								<!--'menu': Relatórios-->
+								<li class="nav-item dropdown">
+									<a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Relatórios</a>
+									<ul class="dropdown-menu">
+										<li><a class="dropdown-item" href="../templates/listarprojeto.html">Lista de projetos</a></li>
+										<li><a class="dropdown-item" href="../templates/listarprograma.html">Lista de programas</a></li>
+										<li><a class="dropdown-item" href="../templates/listarservico.html">Lista de serviços</a></li>
+										<li>
+											<hr class="dropdown-divider">
+										</li>
+										<li><a class="dropdown-item" href="../templates/projetosxprogramas.html">Projetos x Programas</a></li>
+									</ul>
+								</li>
+								<!--'menu': Ajuda-->
+								<li class="nav-item dropdown">
+									<a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Ajuda</a>
+									<ul class="dropdown-menu">
+										<li><a class="dropdown-item" href="../templates/sobre.html">Sobre</a></li>
+										<li><a class="dropdown-item" href="../templates/duvidasfrequentes.html">Dúvidas frequentes</a></li>
+										<li>
+											<hr class="dropdown-divider">
+										</li>
+										<li><a class="dropdown-item" href="../templates/opnioesperguntas.html">Opiniões e perguntas</a></li>
+									</ul>
+								</li>
+								<!--'menu': Catalago-->
+								<li class="nav-item">
+									<a class="nav-link active" aria-current="page" href="../templates/catalogodeiniciativasinstitucionais.html">Catalago de iniciativas</a>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</nav>
+		</header><br>
+		<!--Barra de Cadastro-->
+		<div class="card text-center" id="abas">
+			<h4>Cadastro de projeto</h4>
+			<div class="card-header">
+				<ul class="nav nav-tabs" id="nav-tab" role="tablist">
+					<li class="nav-item">
+					  <button data-bs-toggle="tab" class="nav-link active" id='nav-identificacao-tab' data-bs-target="#nav-identificacao" role='tab' aria-controls="nav-identificacao">Identificação</button>
+					</li>
+					<li class="nav-item">
+					  <button data-bs-toggle="tab" class="nav-link" id='nav-alinhamento1-tab' data-bs-target="#nav-alinhamento1" role='tab' aria-controls="nav-alinhamento1">Alinhamento 1</button>
+					</li>
+					<li class="nav-item">
+					  <button data-bs-toggle="tab" class="nav-link" id='nav-alinhamento2-tab' data-bs-target="#nav-alinhamento2" role='tab' aria-controls="nav-alinhamento2">Alinhamento 2</button>
+					</li>
+					<li class="nav-item">
+					  <button data-bs-toggle="tab" class="nav-link" id='nav-geracaoImpacto-tab' data-bs-target="#nav-geracaoImpacto" role='tab' aria-controls="nav-geracaoImpacto">Geração de impacto</button>
+					</li>
+					<li class="nav-item">
+						<button data-bs-toggle="tab" class="nav-link" id='nav-descricaoDetalhada-tab' data-bs-target="#nav-descricaoDetalhada" role='tab' aria-controls="nav-descricaoDetalhada">Descrição detalhada</button>
+					</li>
+					<li class="nav-item">
+						<button data-bs-toggle="tab" class="nav-link" id='nav-stakeholders-tab' data-bs-target="#nav-stakeholders" role='tab' aria-controls="nav-stakeholders">Stakeholders</button>
+					</li>
+					<li class="nav-item">
+						<button data-bs-toggle="tab" class="nav-link" id='nav-escopo-tab' data-bs-target="#nav-escopo" role='tab' aria-controls="nav-escopo">Escopo</button>
+					</li>
+					<li class="nav-item">
+						<button data-bs-toggle="tab" class="nav-link" id='nav-equipe-tab' data-bs-target="#nav-equipe" role='tab' aria-controls="nav-equipe">Equipe</button>
+					</li>
+					<li class="nav-item">
+						<button data-bs-toggle="tab" class="nav-link" id='nav-custos-tab' data-bs-target="#nav-custos" role='tab' aria-controls="nav-custos">Custos</button>
+					</li>
+					<li class="nav-item">
+						<button data-bs-toggle="tab" class="nav-link" id='nav-riscos-tab' data-bs-target="#nav-riscos" role='tab' aria-controls="nav-riscos">Riscos</button>
+					</li>
+					<li class="nav-item">
+						<button data-bs-toggle="tab" class="nav-link" id='nav-historico-tab' data-bs-target="#nav-historico" role='tab' aria-controls="nav-historico">Histórico</button>
+					</li>
+				</ul>
+				<div class="tab-content" id="nav-tabContent">
+					<!--Identificação-->
+					<div class="tab-pane show active" id="nav-identificacao" role="tabpanel" aria-labelledby="nav-identificacao-tab" tabindex="0">
+						<div class="row g-2 container-fluid">
+							<!--Lado esquerdo-->
+							<div class="col-md-6" id="lado_esquerdo"><br>
+								<div class="form-floating">
+									<input type="text" class="form-control" id="floatingInputGrid">
+									<label for="floatingInputGrid">Nome do projeto</label>
+								</div><br>
+								<div class="form-floating">
+									<input type="text" class="form-control" id="floatingInputGrid">
+									<label for="floatingInputGrid">Processo SEI do Projeto</label>
+								</div><br>
+								<div class="form-floating">
+									<input type="text" class="form-control" id="floatingInputGrid">
+									<label for="floatingInputGrid">Protocolo SEI da última versão do TAP que foi aprovada para compor o Portfolio Institucional</label>
+								</div><br>
+								<div class="form-floating">
+									<select class="form-select" id="floatingSelect" aria-label="Floating label select example">
+										<option selected></option>
+										<option value="1">One</option>
+										<option value="2">Two</option>
+										<option value="3">Three</option>
+									</select>
+									<label for="floatingSelect">Programa associado</label>
+								</div><br>
+								<div class="form-floating">
+									<input type="text" class="form-control" id="floatingInputGrid">
+									<label for="floatingInputGrid">Processo SEI do programa associado</label>
+								</div><br>
+								<div class="form-floating">
+									<select class="form-select" aria-label="Default select">
+										<option selected></option>
+										<option value="1">One</option>
+										<option value="2">Two</option>
+										<option value="3">Three</option>
+									</select>
+									<label for="floatingSelect">Responsável pelo Projeto</label>
+								</div><br>
+								<div class="form-floating">
+									<select class="form-select" aria-label="Default select example">
+										<option selected></option>
+										<option value="1">One</option>
+										<option value="2">Two</option>
+										<option value="3">Three</option>
+									</select>
+									<label for="floatingSelect">Unidade Responsavel</label>
+								</div><br>
+								<div class="form-floating">
+									<select class="form-select" id="floatingSelect" aria-label="Floating label select example">
+										<option selected></option>
+										<option value="1">One</option>
+										<option value="2">Two</option>
+										<option value="3">Three</option>
+									</select>
+									<label for="floatingSelect">Unidade(s) Executora(s)</label>
+								</div><br>
+								<div class="form-floating">
+									<select class="form-select" id="floatingSelect" aria-label="Floating label select example">
+										<option selected></option>
+										<option value="1">One</option>
+										<option value="2">Two</option>
+										<option value="3">Three</option>
+									</select>
+									<label for="floatingSelect">Categoria do Projeto</label>
+								</div><br>
+								<div class="form-floating">
+									<select class="form-select" id="floatingSelect" aria-label="Floating label select example">
+										<option selected></option>
+										<option value="1">One</option>
+										<option value="2">Two</option>
+										<option value="3">Three</option>
+									</select>
+									<label for="floatingSelect">Situação do projeto</label>
+								</div><br>
+								<div class="form-floating">
+									<input type="date" class="form-control" id="myDate">
+									<label for="floatingSelect">Duração estimada do projeto (meses)</label>
+								</div><br>
+								<div class="form-floating">
+									<input type="date" class="form-control" id="myDate">
+									<label for="floatingSelect">Data de Início do projeto (meses)</label>
+								</div><br>
+								<div class="form-floating">
+									<input type="date" class="form-control" id="myDate">
+									<label for="floatingSelect">Data de Conclusão do projeto (meses)</label>
+								</div><br>
+								<div class="form-floating">
+									<select class="form-select" id="floatingSelect" aria-label="Floating label select example">
+										<option selected></option>
+										<option value="1">One</option>
+										<option value="2">Two</option>
+										<option value="3">Three</option>
+									</select>
+									<label for="floatingSelect">Situação do TAP</label>
+								</div><br>
+								<div class="form-floating">
+									<input type="date" class="form-control" id="myDate">
+									<label for="floatingSelect">Aprovação da UORG</label>
+								</div>
+							</div>
+							<!--Lado direito-->
+							<div class="col-md-6" id="lado_direito"><br>
+								<div class="form-floating">
+									<input type="date" class="form-control" id="myDate">
+									<label for="floatingSelect">Aprovação para Portfólio INPE</label>
+								</div><br>
+								<div class="form-floating">
+									<input type="date" class="form-control" id="myDate">
+									<label for="floatingSelect">Carregamento no SIGE3P</label>
+								</div><br>
+								<div class="form-floating">
+									<textarea class="form-control" id="floatingTextarea" rows="3" style="height: 140px;"></textarea>
+									<label for="floatingTextarea">Objetivo do projeto</label>
+								</div><br>
+								<div class="form-floating">
+									<textarea class="form-control" id="floatingTextarea" rows="3" style="height: 140px;"></textarea>
+									<label for="floatingTextarea">Descrição do projeto</label>
+								</div><br>
+								<div class="form-floating">
+									<select class="form-select" id="floatingSelect" aria-label="Floating label select example">
+										<option selected></option>
+										<option value="1">One</option>
+										<option value="2">Two</option>
+										<option value="3">Three</option>
+									</select>
+									<label for="floatingSelect">Prioridade INPE</label>
+								</div><br>
+								<div class="form-floating">
+									<select class="form-select" id="floatingSelect" aria-label="Floating label select example">
+										<option selected></option>
+										<option value="1">One</option>
+										<option value="2">Two</option>
+										<option value="3">Three</option>
+									</select>
+									<label for="floatingSelect">Evidência da priorização pelo INPE</label>
+								</div><br>
+								<div class="form-floating">
+									<select class="form-select" id="floatingSelect" aria-label="Floating label select example">
+										<option selected></option>
+										<option value="1">One</option>
+										<option value="2">Two</option>
+										<option value="3">Three</option>
+									</select>
+									<label for="floatingSelect">Tipo de Parceria</label>
+								</div><br>
+								<div class="form-floating">
+									<select class="form-select" id="floatingSelect" aria-label="Floating label select example">
+										<option selected></option>
+										<option value="1">One</option>
+										<option value="2">Two</option>
+										<option value="3">Three</option>
+									</select>
+									<label for="floatingSelect">Situação da Parceria</label>
+								</div><br>
+								<div class="form-floating">
+									<select class="form-select" id="floatingSelect" aria-label="Floating label select example">
+										<option selected></option>
+										<option value="1">One</option>
+										<option value="2">Two</option>
+										<option value="3">Three</option>
+									</select>
+									<label for="floatingSelect">Processo SEI da Parceria</label>
+								</div><br>
+								<div class="form-floating">
+									<select class="form-select" id="floatingSelect" aria-label="Floating label select example">
+										<option selected></option>
+										<option value="1">One</option>
+										<option value="2">Two</option>
+										<option value="3">Three</option>
+									</select>
+									<label for="floatingSelect">Propriedade Intelectual</label>
+								</div><br>
+								<div class="form-floating">
+									<select class="form-select" id="floatingSelect" aria-label="Floating label select example">
+										<option selected></option>
+										<option value="1">One</option>
+										<option value="2">Two</option>
+										<option value="3">Three</option>
+									</select>
+									<label for="floatingSelect">Faixa de Custo Total do Projeto</label>
+								</div><br>
+								<div class="form-floating">
+									<select class="form-select" id="floatingSelect" aria-label="Floating label select example">
+										<option selected></option>
+										<option value="1">One</option>0
+										<option value="2">Two</option>
+										<option value="3">Three</option>
+									</select>
+									<label for="floatingSelect">Recursos Financeiros Disponiveis</label>
+								</div><br>
+								<!--Botões: Salvar e cancelar-->
+								<div class="d-grid gap-2 d-md-flex justify-content-md-end">
+									<button class="btn btn-success me-md-2" type="button">Salvar</button>
+									<button class="btn btn-outline-dark" type="button">Cancelar</button>
+								</div>
+							</div>
+						</div>
+					</div>
+					<!--Alinhamento 1-->
+					<div class="tab-pane" id="nav-alinhamento1" role="tabpanel" aria-labelledby="nav-alinhamento1-tab" tabindex="0">
+						<div class="form-floating">
+							<input type="text" class="form-control" id="floatingInputGrid">
+							<label for="floatingInputGrid">Nome do projeto</label>
+						</div><br>
+						<div class="form-floating">
+							<input type="text" class="form-control" id="floatingInputGrid">
+							<label for="floatingInputGrid">Processo SEI do Projeto</label>
+						</div><br>
+						<div class="form-floating">
+							<textarea class="form-control" id="floatingTextarea2" style="height: 140px"></textarea>
+							<label for="floatingTextarea2">Objetivos Estratégicos do INPE</label>
+						</div><br>
+						<div class="form-floating">
+							<textarea class="form-control" id="floatingTextarea2" style="height: 140px"></textarea>
+							<label for="floatingTextarea2">Metas Estratégicas do INPE</label>
+						</div><br>
+						<div class="form-floating">
+							<textarea class="form-control" id="floatingTextarea2" style="height: 140px"></textarea>
+							<label for="floatingTextarea2">Período</label>
+						</div><br>
+						<div class="form-floating">
+							<textarea class="form-control" id="floatingTextarea2" style="height: 140px"></textarea>
+							<label for="floatingTextarea2">Política Nacacional de Inovação e Política de Inovação do INPE</label>
+						</div><br>
+						<div class="form-floating">
+							<textarea class="form-control" id="floatingTextarea2" style="height: 140px"></textarea>
+							<label for="floatingTextarea2">Programa PPA</label>
+						</div><br>
+						<div class="form-floating">
+							<textarea class="form-control" id="floatingTextarea2" style="height: 140px"></textarea>
+							<label for="floatingTextarea2">Período</label>
+						</div><br>
+						<div class="form-floating">
+							<textarea class="form-control" id="floatingTextarea2" style="height: 140px"></textarea>
+							<label for="floatingTextarea2">Evidência do Alinhamento</label>
+						</div><br>
+						<div class="form-floating">
+							<textarea class="form-control" id="floatingTextarea2" style="height: 140px"></textarea>
+							<label for="floatingTextarea2">Objetivo do PPA</label>
+						</div><br>
+						<div class="form-floating">
+							<textarea class="form-control" id="floatingTextarea2" style="height: 140px"></textarea>
+							<label for="floatingTextarea2">Período</label>
+						</div><br>
+						<div class="form-floating">
+							<textarea class="form-control" id="floatingTextarea2" style="height: 140px"></textarea>
+							<label for="floatingTextarea2">Evidência do Alinhamento</label>
+						</div><br>
+						<!--Botões: Salvar e cancelar-->
+						<div class="d-grid gap-2 d-md-flex justify-content-md-end">
+							<button class="btn btn-success me-md-2" type="button">Salvar</button>
+							<button class="btn btn-outline-dark" type="button">Cancelar</button>
+						</div>
+					</div>
+					<!--Alinhamento 2-->
+					<div class="tab-pane" id="nav-alinhamento2" role="tabpanel" aria-labelledby="nav-alinhamento2-tab" tabindex="0">
+						<div class="form-floating">
+							<input type="text" class="form-control" id="floatingInputGrid">
+							<label for="floatingInputGrid">Nome do projeto</label>
+						</div><br>
+						<div class="form-floating">
+							<input type="text" class="form-control" id="floatingInputGrid">
+							<label for="floatingInputGrid">Processo SEI do Projeto</label>
+						</div><br>
+						<div class="form-floating">
+							<textarea class="form-control" id="floatingTextarea2" style="height: 140px"></textarea>
+							<label for="floatingTextarea2">Área Prioritária ENCTI</label>
+						</div><br>
+						<div class="form-floating">
+							<textarea class="form-control" id="floatingTextarea2" style="height: 140px"></textarea>
+							<label for="floatingTextarea2">Período</label>
+						</div><br>
+						<div class="form-floating">
+							<textarea class="form-control" id="floatingTextarea2" style="height: 140px"></textarea>
+							<label for="floatingTextarea2">Evidência do Alinhamento</label>
+						</div><br>
+						<div class="form-floating">
+							<textarea class="form-control" id="floatingTextarea2" style="height: 140px"></textarea>
+							<label for="floatingTextarea2">Objetivos de Desenvolvimento Sustentável - Agenda 2030 ONU</label>
+						</div><br>
+						<div class="form-floating">
+							<textarea class="form-control" id="floatingTextarea2" style="height: 140px"></textarea>
+							<label for="floatingTextarea2">Evidência do Alinhamento</label>
+						</div><br>
+						<div class="form-floating">
+							<textarea class="form-control" id="floatingTextarea2" style="height: 140px"></textarea>
+							<label for="floatingTextarea2">Mapa Estratégico do MCTI 2020-2030</label>
+						</div><br>
+						<div class="form-floating">
+							<textarea class="form-control" id="floatingTextarea2" style="height: 140px"></textarea>
+							<label for="floatingTextarea2">Evidência do Alinhamento</label>
+						</div><br>
+						<div class="form-floating">
+							<textarea class="form-control" id="floatingTextarea2" style="height: 140px"></textarea>
+							<label for="floatingTextarea2">Eixos e Diretrizes da Estratégia Nacional de Desenvolvimento Econômico e Social</label>
+						</div><br>
+						<div class="form-floating">
+							<textarea class="form-control" id="floatingTextarea2" style="height: 140px"></textarea>
+							<label for="floatingTextarea2">Evidência do Alinhamento</label>
+						</div><br>
+						<div class="form-floating">
+							<textarea class="form-control" id="floatingTextarea2" style="height: 140px"></textarea>
+							<label for="floatingTextarea2">Área Temática MCTI</label>
+						</div><br>
+						<div class="form-floating">
+							<textarea class="form-control" id="floatingTextarea2" style="height: 140px"></textarea>
+							<label for="floatingTextarea2">Evidência do Alinhamento</label>
+						</div><br>
+						<div class="form-floating">
+							<textarea class="form-control" id="floatingTextarea2" style="height: 140px"></textarea>
+							<label for="floatingTextarea2">Área de Tecnologias Prioritárias</label>
+						</div><br>
+						<div class="form-floating">
+							<textarea class="form-control" id="floatingTextarea2" style="height: 140px"></textarea>
+							<label for="floatingTextarea2">Evidência do Alinhamento</label>
+						</div><br>
+						<div class="form-floating">
+							<textarea class="form-control" id="floatingTextarea2" style="height: 140px"></textarea>
+							<label for="floatingTextarea2">Políticas Públicas</label>
+						</div><br>
+						<div class="form-floating">
+							<textarea class="form-control" id="floatingTextarea2" style="height: 140px"></textarea>
+							<label for="floatingTextarea2">Evidência do Alinhamento</label>
+						</div><br>
+						<div class="form-floating">
+							<textarea class="form-control" id="floatingTextarea2" style="height: 140px"></textarea>
+							<label for="floatingTextarea2">Outras Políticas Públicas</label>
+						</div><br>
+						<div class="form-floating">
+							<textarea class="form-control" id="floatingTextarea2" style="height: 140px"></textarea>
+							<label for="floatingTextarea2">Evidência do Alinhamento</label>
+						</div><br>
+						<div class="form-floating">
+							<textarea class="form-control" id="floatingTextarea2" style="height: 140px"></textarea>
+							<label for="floatingTextarea2">Impactado</label>
+						</div><br>
+						<div class="form-floating">
+							<textarea class="form-control" id="floatingTextarea2" style="height: 140px"></textarea>
+							<label for="floatingTextarea2">Justificativa</label>
+						</div><br>
+						<div class="form-floating">
+							<textarea class="form-control" id="floatingTextarea2" style="height: 140px"></textarea>
+							<label for="floatingTextarea2">Evstratégia - Objetivo Estratégico</label>
+						</div><br>
+						<!--Botões: Salvar e cancelar-->
+						<div class="d-grid gap-2 d-md-flex justify-content-md-end">
+							<button class="btn btn-success me-md-2" type="button">Salvar</button>
+							<button class="btn btn-outline-dark" type="button">Cancelar</button>
+						</div>
+					</div>
+					<!--Geracação de Impacto-->
+					<div class="tab-pane" id="nav-geracaoImpacto" role="tabpanel" aria-labelledby="nav-geracaoImpacto-tab" tabindex="0">
+						<div class="row g-2">
+							<!--Lado esquerdo-->
+							<div class="col-md"><br>
+								<div class="form-floating">
+									<input type="text" class="form-control" id="floatingInputGrid">
+									<label for="floatingInputGrid">Nome do projeto</label>
+								</div><br>
+								<div class="form-floating">
+									<textarea class="form-control" id="floatingTextarea2" style="height: 140px"></textarea>
+									<label for="floatingTextarea2">Perspectiva população brasileira</label>
+								</div><br>
+								<div class="form-floating">
+									<input type="text" class="form-control" id="floatingInputGrid">
+									<label for="floatingInputGrid">Missão MCTI</label>
+								</div><br>
+								<div class="form-floating">
+									<input type="text" class="form-control" id="floatingInputGrid">
+									<label for="floatingInputGrid">Perspectiva alta gestão MCTI</label>
+								</div>
+								<br>
+								<div class="form-floating">
+									<input type="text" class="form-control" id="floatingInputGrid">
+									<label for="floatingInputGrid">Perspectiva alta gestão INPE</label>
+								</div>
+								<br>
+							</div>
+							<!--Lado direito-->
+							<div class="col-md"><br>
+								<div class="form-floating">
+									<input type="date" class="form-control" id="myDate">
+									<label for="floatingSelect">Perspectiva UORG responsável</label>
+								</div><br>
+								<div class="form-floating">
+									<input type="date" class="form-control" id="myDate">
+									<label for="floatingSelect">Perspectiva órgãos controle</label>
+								</div><br>
+								<div class="form-floating">
+									<input type="date" class="form-control" id="myDate">
+									<label for="floatingSelect">Metas políticas públicas</label>
+								</div><br>
+								<!--Botões: Salvar e cancelar-->
+								<div class="d-grid gap-2 d-md-flex justify-content-md-end">
+									<button class="btn btn-success me-md-2" type="button">Salvar</button>
+									<button class="btn btn-outline-dark" type="button">Cancelar</button>
+								</div>
+							</div>
+						</div>
+					</div>
+					<!--Descrição detalhada-->
+					<div class="tab-pane" id="nav-descricaoDetalhada" role="tabpanel" aria-labelledby="nav-descricaoDetalhada-tab" tabindex="0">
+						<div class="row g-2">
+							<!--Lado esquerdo-->
+							<div class="col-md"><br>
+								<div class="form-floating">
+									<input type="text" class="form-control" id="floatingInputGrid">
+									<label for="floatingInputGrid">Nome do projeto</label>
+								</div><br>
+								<div class="form-floating">
+									<textarea class="form-control" id="floatingTextarea2" style="height: 140px"></textarea>
+									<label for="floatingTextarea2">Descrição do(s) produto(s)/ serviço(s) que será(ão) entregues</label>
+								</div><br>
+								<div class="form-floating">
+									<input type="text" class="form-control" id="floatingInputGrid">
+									<label for="floatingInputGrid">Justificativa do projeto</label>
+								</div><br>
+								<div class="form-floating">
+									<input type="text" class="form-control" id="floatingInputGrid">
+									<label for="floatingInputGrid">Resultados esperados</label>
+								</div><br>
+								<div class="form-floating">
+									<input type="text" class="form-control" id="floatingInputGrid">
+									<label for="floatingInputGrid">Capacidade técnica operacional</label>
+								</div><br>
+								<div class="form-floating">
+									<input type="text" class="form-control" id="floatingInputGrid">
+									<label for="floatingInputGrid">Público alvo</label>
+								</div><br>
+								<div class="form-floating">
+									<input type="text" class="form-control" id="floatingInputGrid">
+									<label for="floatingInputGrid">Objetivo geral</label>
+								</div><br>
+							</div>
+							<!--Lado direito-->
+							<div class="col-md"><br>
+								<div class="form-floating">
+									<input type="date" class="form-control" id="myDate">
+									<label for="floatingSelect">Objetivos específicos</label>
+								</div><br>
+								<div class="form-floating">
+									<input type="date" class="form-control" id="myDate">
+									<label for="floatingSelect">Metas do projeto e critérios de sucesso relacionados</label>
+								</div><br>
+								<div class="form-floating">
+									<select class="form-select" id="floatingSelect" aria-label="Floating label select example">
+										<option selected></option>
+										<option value="1">One</option>
+										<option value="2">Two</option>
+										<option value="3">Three</option>
+									</select>
+									<label for="floatingSelect">TRL atual</label>
+								</div><br>
+								<div class="form-floating">
+									<select class="form-select" id="floatingSelect" aria-label="Floating label select example">
+										<option selected></option>
+										<option value="1">One</option>
+										<option value="2">Two</option>
+										<option value="3">Three</option>
+									</select>
+									<label for="floatingSelect">TRL esperado ao fim do projeto</label>
+								</div><br>
+								<div class="form-floating">
+									<select class="form-select" id="floatingSelect" aria-label="Floating label select example">
+										<option selected></option>
+										<option value="1">One</option>
+										<option value="2">Two</option>
+										<option value="3">Three</option>
+									</select>
+									<label for="floatingSelect">TRL final</label>
+								</div><br>
+								<div class="form-floating">
+									<input type="text" class="form-control" id="floatingInputGrid">
+									<label for="floatingInputGrid">Requisitos para encerramento do projeto</label>
+								</div><br>
+								<div class="form-floating">
+									<input type="text" class="form-control" id="floatingInputGrid">
+									<label for="floatingInputGrid">Sustentabilidade</label>
+								</div><br>
+								<div class="form-floating">
+									<input type="text" class="form-control" id="floatingInputGrid">
+									<label for="floatingInputGrid">Objetivo do Projeto</label>
+								</div><br>
+								<div class="form-floating">
+									<input type="text" class="form-control" id="floatingInputGrid">
+									<label for="floatingInputGrid">Descrição do Projeto para compor o Catálogo Institucional</label>
+								</div><br>
+								<!--Botões: Salvar e cancelar-->
+								<div class="d-grid gap-2 d-md-flex justify-content-md-end">
+									<button class="btn btn-success me-md-2" type="button">Salvar</button>
+									<button class="btn btn-outline-dark" type="button">Cancelar</button>
+								</div>
+							</div>
+						</div>
+					</div>
+					<!--Stakeholders-->
+					<div class="tab-pane" id="nav-stakeholders" role="tabpanel" aria-labelledby="nav-stakeholders-tab" tabindex="0">
+						<div class="form-floating">
+							<input type="text" class="form-control" id="floatingInputGrid">
+							<label for="floatingInputGrid">Nome do projeto</label>
+						</div><br>
+						<div class="form-floating">
+							<input type="text" class="form-control" id="floatingInputGrid">
+							<label for="floatingInputGrid">Parte interessada</label>
+						</div><br>
+						<div class="form-floating">
+							<input type="text" class="form-control" id="floatingInputGrid">
+							<label for="floatingInputGrid">Expectativas e interesses</label>
+						</div><br>
+						<div class="form-floating">
+							<input type="text" class="form-control" id="floatingInputGrid">
+							<label for="floatingInputGrid">Requisitos:</label>
+						</div><br>
+						<!--Botões: Salvar e cancelar-->
+						<div class="d-grid gap-2 d-md-flex justify-content-md-end">
+							<button class="btn btn-success me-md-2" type="button">Salvar</button>
+							<button class="btn btn-outline-dark" type="button">Cancelar</button>
+						</div>
+					</div>
+					<!--Escopo-->
+					<div class="tab-pane" id="nav-escopo" role="tabpanel" aria-labelledby="nav-escopo-tab" tabindex="0">
+						<div class="form-floating">
+							<input type="text" class="form-control" id="floatingInputGrid">
+							<label for="floatingInputGrid">Nome do projeto</label>
+						</div><br>
+						<div class="form-floating">
+							<textarea class="form-control" id="floatingTextarea2" style="height: 140px"></textarea>
+							<label for="floatingTextarea2">Premissas do projeto</label>
+						</div><br>
+						<div class="form-floating">
+							<textarea class="form-control" id="floatingTextarea2" style="height: 140px"></textarea>
+							<label for="floatingTextarea2">Restrições do projeto</label>
+						</div><br>
+						<div class="form-floating">
+							<textarea class="form-control" id="floatingTextarea2" style="height: 140px"></textarea>
+							<label for="floatingTextarea2">Escopo do projeto</label>
+						</div><br>
+						<div class="form-floating">
+							<textarea class="form-control" id="floatingTextarea2" style="height: 140px"></textarea>
+							<label for="floatingTextarea2">Exclusões (não escopo do projeto)</label>
+						</div><br>
+						<div class="form-floating">
+							<textarea class="form-control" id="floatingTextarea2" style="height: 140px"></textarea>
+							<label for="floatingTextarea2">Fatores externos</label>
+						</div><br>
+						<!--Botões: Salvar e cancelar-->
+						<div class="d-grid gap-2 d-md-flex justify-content-md-end">
+							<button class="btn btn-success me-md-2" type="button">Salvar</button>
+							<button class="btn btn-outline-dark" type="button">Cancelar</button>
+						</div>
+					</div>
+					<!--Equipe-->
+					<div class="tab-pane" id="nav-equipe" role="tabpanel" aria-labelledby="nav-equipe-tab" tabindex="0">
+						<div class="form-floating">
+							<input type="text" class="form-control" id="floatingInputGrid">
+							<label for="floatingInputGrid">Nome do projeto</label>
+						</div><br>
+						<div class="form-floating">
+							<input type="text" class="form-control" id="floatingInputGrid">
+							<label for="floatingInputGrid">Nome Profissional</label>
+						</div><br>
+						<div class="form-floating">
+							<input type="text" class="form-control" id="floatingInputGrid">
+							<label for="floatingInputGrid">Vinculo INPE</label>
+						</div><br>
+						<div class="form-floating">
+							<input type="text" class="form-control" id="floatingInputGrid">
+							<label for="floatingInputGrid">Organização Externa</label>
+						</div><br>
+						<div class="form-floating">
+							<input type="text" class="form-control" id="floatingInputGrid">
+							<label for="floatingInputGrid">Nome Profissional Externo</label>
+						</div><br>
+						<!--Botões: Salvar e cancelar-->
+						<div class="d-grid gap-2 d-md-flex justify-content-md-end">
+							<button class="btn btn-success me-md-2" type="button">Salvar</button>
+							<button class="btn btn-outline-dark" type="button">Cancelar</button>
+						</div>
+					</div>
+					<!--Custos-->
+					<div class="tab-pane" id="nav-custos" role="tabpanel" aria-labelledby="nav-custos-tab" tabindex="0">
+						<div class="row g-2">
+							<!--Lado esquerdo-->
+							<div class="col-md"><br>
+								<div class="form-floating">
+									<input type="text" class="form-control" id="floatingInputGrid">
+									<label for="floatingInputGrid">Nome do projeto</label>
+								</div><br>
+								<div class="form-floating">
+									<input type="text" class="form-control" id="floatingInputGrid">
+									<label for="floatingInputGrid">Processo SEI do Projeto</label>
+								</div><br>
+								<div class="form-floating">
+									<select class="form-select" id="floatingSelect" aria-label="Floating label select example">
+										<option selected></option>
+										<option value="1">One</option>
+										<option value="2">Two</option>
+										<option value="3">Three</option>
+									</select>
+									<label for="floatingSelect">Código da área orçamentária</label>
+								</div><br>
+								<div class="form-floating">
+									<textarea class="form-control" id="floatingTextarea2" style="height: 140px"></textarea>
+									<label for="floatingTextarea2">Estruturado orçamento do projeto</label>
+								</div><br>
+								<div class="form-floating">
+									<input type="text" class="form-control" id="floatingInputGrid">
+									<label for="floatingInputGrid">Custo total estimado(R$)</label>
+								</div><br>
+								<div class="form-floating">
+									<input type="text" class="form-control" id="floatingInputGrid">
+									<label for="floatingInputGrid">Observações sobre o Custo total estimado(R$)</label>
+								</div><br>
+							</div>
+							<!--Lado direito-->
+							<div class="col-md"><br>
+								<div class="form-floating">
+									<input type="date" class="form-control" id="myDate">
+									<label for="floatingSelect">Disponibilidade Orçamentátia/Financeira e Parcerias</label>
+								</div><br>
+								<div class="form-floating">
+									<input type="date" class="form-control" id="myDate">
+									<label for="floatingSelect">Valor Disponível</label>
+								</div><br>
+								<div class="form-floating">
+									<input type="date" class="form-control" id="myDate">
+									<label for="floatingSelect">Instituição</label>
+								</div><br>
+								<br>
+							</div>
+							<!--Botões: Salvar e cancelar-->
+							<div class="d-grid gap-2 d-md-flex justify-content-md-end">
+								<button class="btn btn-success me-md-2" type="button">Salvar</button>
+								<button class="btn btn-outline-dark" type="button">Cancelar</button>
+							</div>
+						</div>
+					</div>
+					<!--Riscos-->
+					<div class="tab-pane" id="nav-riscos" role="tabpanel" aria-labelledby="nav-riscos-tab" tabindex="0">
+						<div class="form-floating">
+							<input type="text" class="form-control" id="floatingInputGrid">
+							<label for="floatingInputGrid">Nome do projeto</label>
+						</div><br>
+						<div class="form-floating">
+							<textarea class="form-control" id="floatingTextarea2" style="height: 140px"></textarea>
+							<label for="floatingTextarea2">Riscos do Projeto</label>
+						</div><br>
+						<!--Botões: Salvar e cancelar-->
+						<div class="d-grid gap-2 d-md-flex justify-content-md-end">
+							<button class="btn btn-success me-md-2" type="button">Salvar</button>
+							<button class="btn btn-outline-dark" type="button">Cancelar</button>
+						</div>
+					</div>
+					<!--Histórico-->
+					<div class="tab-pane" id="nav-historico" role="tabpanel" aria-labelledby="nav-historico-tab" tabindex="0">
+						<div class="form-floating">
+							<input type="text" class="form-control" id="floatingInputGrid">
+							<label for="floatingInputGrid">Nome do projeto</label>
+						</div><br>
+						<div class="form-floating">
+							<input type="text" class="form-control" id="floatingInputGrid">
+							<label for="floatingInputGrid">Evento</label>
+						</div><br>
+						<div class="form-floating">
+							<input type="text" class="form-control" id="floatingInputGrid">
+							<label for="floatingInputGrid">Data do registro</label>
+						</div><br>
+						<div class="form-floating">
+							<input type="text" class="form-control" id="floatingInputGrid">
+							<label for="floatingInputGrid">Responsável pelo registro</label>
+						</div><br>
+						<div class="form-floating">
+							<input type="text" class="form-control" id="floatingInputGrid">
+							<label for="floatingInputGrid">ID projeto</label>
+						</div><br>
+						<!--Botões: Salvar e cancelar-->
+						<div class="d-grid gap-2 d-md-flex justify-content-md-end">
+							<button class="btn btn-success me-md-2" type="button">Salvar</button>
+							<button class="btn btn-outline-dark" type="button">Cancelar</button>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!--JS-->
+		<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
+	</body>
+</html>
