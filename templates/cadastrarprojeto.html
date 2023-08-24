@@ -1,101 +1,89 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-  <head>
-    <title>Cadastro de projeto</title>
-    <!--CSS-->
-    <meta charset="utf-8">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
-    <link rel="stylesheet" href="../static/css/cadastrarprojeto.css">
-    <link rel="aoercut icon" href="../static/img/3pst.png" sizes="32x32" type="image/png">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-  </head>
-
-  <body>
-    <!--Cabeçalho da page-->
-    <table class="top">
-      <tr>
-        <td style="width:100px"><a href="https://www.gov.br/inpe/pt-br"><img src="../static/img/inpelogo.png" width="90px" height="90px"></a></td>
-        <td style="width:100px"><img src="../static/img/3pst.png" width="75px"></a></td>
-        <td><h2>Sistema de Gerenciamento de Portfólio do INPE - v2.0</h2></a></td>
-      </tr>
-    </table>
-    <header>
-      <!--Cor e formato-->
-      <nav class="navbar">
-        <div class="container-fluid">
-	        <!--Botão 'recursivo'-->
-	        <!--<button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">-->
-	        <div style = "position:relative; left:900px;>
-	          <button class="button button1" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
-	            <span class="navbar-toggler-icon"></span>
-	          </button>
-	        </div>
-	        <!--Dropdown/ menu-->
-	        <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
-	          <div class="offcanvas-header">
-	            <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Menu</h5>
-	            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-	          </div>
-	          <div class="offcanvas-body">
-	            <!--Canto direito superior-->
-	            <form class="d-flex mt-3" role="search">
-	              <input class="form-control me-2" type="search" aria-label="Search">
-	              <button class="btn btn-outline-success" type="submit">Buscar</button>
-	            </form>
-	            <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
-	              <!--'menu': Home-->
-		            <li class="nav-item">
-		              <a class="nav-link active" aria-current="page" href="../templates/index.html">Home</a>
-		            </li>
-								<!--'menu': Cadastrar-->
-								<li class="nav-item dropdown">
-									<a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Cadastrar</a>
-									<ul class="dropdown-menu">
-										<li><a class="dropdown-item" href="../templates/cadastrarprojeto.html">Novo projeto</a></li>
-										<li><a class="dropdown-item" href="../templates/cadastrarprograma.html">Novo programa</a></li>
-										<li>
-											<hr class="dropdown-divider">
-										</li>
-										<li><a class="dropdown-item" href="../templates/cadastrarcolaboradorinpe.html">Novo colaborador INPE</a></li>
-										<li><a class="dropdown-item" href="../templates/cadastrarcolaboradorexterno.html">Novo colaborador externo</a></li>
-										<li><a class="dropdown-item" href="../templates/cadastrarorganizacaoexterna.html">Nova organização externa</a></li>
-									</ul>
-								</li>
-								<!--'menu': Relatórios-->
-								<li class="nav-item dropdown">
-									<a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Relatórios</a>
-									<ul class="dropdown-menu">
-										<li><a class="dropdown-item" href="../templates/listarprojeto.html">Lista de projetos</a></li>
-										<li><a class="dropdown-item" href="../templates/listarprograma.html">Lista de programas</a></li>
-										<li><a class="dropdown-item" href="../templates/listarservico.html">Lista de serviços</a></li>
-										<li>
-											<hr class="dropdown-divider">
-										</li>
-										<li><a class="dropdown-item" href="../templates/projetosxprogramas.html">Projetos x Programas</a></li>
-									</ul>
-								</li>
-								<!--'menu': Ajuda-->
-								<li class="nav-item dropdown">
-									<a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Ajuda</a>
-									<ul class="dropdown-menu">
-										<li><a class="dropdown-item" href="../templates/sobre.html">Sobre</a></li>
-										<li><a class="dropdown-item" href="../templates/duvidasfrequentes.html">Dúvidas frequentes</a></li>
-										<li>
-											<hr class="dropdown-divider">
-										</li>
-										<li><a class="dropdown-item" href="../templates/opnioesperguntas.html">Opiniões e perguntas</a></li>
-									</ul>
-								</li>
-								<!--'menu': Catalago-->
-								<li class="nav-item">
-									<a class="nav-link active" aria-current="page" href="../templates/catalogodeiniciativasinstitucionais.html">Catalago de iniciativas</a>
-								</li>
-							</ul>
-						</div>
-					</div>
-				</div>
-			</nav>
+ <head>
+  <title>Cadastro de projeto</title>
+  <!--CSS-->
+  <meta charset="utf-8">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+  <link rel="stylesheet" href="../static/css/cadastrarprojeto.css">
+  <link rel="aoercut icon" href="../static/img/3pst.png" sizes="32x32" type="image/png">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+ </head>
+ <body>
+  <header>
+   <!--Cor e formato-->
+   <nav class="navbar">
+    <div class="container-fluid">
+     <!--Logos-->
+     <a class="navbar-brand">
+      <img id="logo" src="../static/img/inpelogo.png" width="60px" disable>
+      <img class="logo" src="../static/img/3pst.png" width="60px" disable>
+     </a>
+     <span class="navbar-brand mb-0 h1">Sistema de Gerenciamento de Portfólio do INPE - v2.0</span>
+     <!--Botão 'recursivo'-->
+     <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+     </button>
+     <!--Dropdown/ menu-->
+     <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+      <div class="offcanvas-header">
+       <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Menu</h5>
+       <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+      </div>
+      <div class="offcanvas-body">
+       <!--Canto direito superior-->
+       <form class="d-flex mt-3" role="search">
+        <input class="form-control me-2" type="search" aria-label="Search">
+        <button class="btn btn-outline-success" type="submit">Buscar</button>
+       </form>
+       <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+        <!--'menu': Home-->
+        <li class="nav-item">
+         <a class="nav-link active" aria-current="page" href="../templates/index.html">Home</a>
+        </li>
+        <!--'menu': Cadastrar-->
+        <li class="nav-item dropdown">
+         <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Cadastrar</a>
+         <ul class="dropdown-menu">
+          <li><a class="dropdown-item" href="../templates/cadastrarprojeto.html">Novo projeto</a></li>
+          <li><a class="dropdown-item" href="../templates/cadastrarprograma.html">Novo programa</a></li>
+          <li><hr class="dropdown-divider"></li>
+          <li><a class="dropdown-item" href="../templates/cadastrarcolaboradorinpe.html">Novo colaborador INPE</a></li>
+          <li><a class="dropdown-item" href="../templates/cadastrarcolaboradorexterno.html">Novo colaborador externo</a></li>
+          <li><a class="dropdown-item" href="../templates/cadastrarorganizacaoexterna.html">Nova organização externa</a></li>
+         </ul>
+        </li>
+        <!--'menu': Relatórios-->
+        <li class="nav-item dropdown">
+         <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Relatórios</a>
+         <ul class="dropdown-menu">
+          <li><a class="dropdown-item" href="../templates/listarprojeto.html">Lista de projetos</a></li>
+          <li><a class="dropdown-item" href="../templates/listarprograma.html">Lista de programas</a></li>
+          <li><a class="dropdown-item" href="../templates/listarservico.html">Lista de serviço</a></li>
+          <li><hr class="dropdown-divider"></li>
+          <li><a class="dropdown-item" href="../templates/projetosxprogramas.html">Projetos x Programas</a></li>
+         </ul>
+        </li>
+        <!--'menu': Ajuda-->
+        <li class="nav-item dropdown">
+         <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Ajuda</a>
+         <ul class="dropdown-menu">
+          <li><a class="dropdown-item" href="../templates/sobre.html">Sobre</a></li>
+          <li><a class="dropdown-item" href="../templates/duvidasfrequentes.html">Dúvidas frequentes</a></li>
+          <li><hr class="dropdown-divider"></li>
+          <li><a class="dropdown-item" href="../templates/opniõesperguntas.html">Opiniões e perguntas</a></li>
+         </ul>
+        </li>
+        <!--'menu': Catalago-->
+        <li class="nav-item">
+         <a class="nav-link active" aria-current="page" href="../templates/catalogodeiniciativasinstitucionais.html">Catalago de iniciativas</a>
+        </li>
+       </ul>
+      </div>
+     </div>
+    </div>
+   </nav>
 		</header><br>
 		<!--Barra de Cadastro-->
 		<div class="card text-center" id="abas">
@@ -328,11 +316,6 @@
 									</select>
 									<label for="floatingSelect">Recursos Financeiros Disponiveis</label>
 								</div><br>
-								<!--Botões: Salvar e cancelar-->
-								<!--<div class="d-grid gap-2 d-md-flex justify-content-md-end">
-									<button class="btn btn-success me-md-2" type="button">Salvar</button>
-									<button class="btn btn-outline-dark" type="button">Cancelar</button>
-								</div>-->
 							</div>
 						</div>
 					</div>
@@ -388,7 +371,6 @@
 							<label for="floatingTextarea2">Evidência do Alinhamento</label>
 						</div><br>
 					</div>
-
 					<!--Alinhamento 2-->
 					<div class="tab-pane" id="nav-alinhamento2" role="tabpanel" aria-labelledby="nav-alinhamento2-tab" tabindex="0">
 						<div class="form-floating">
@@ -480,7 +462,6 @@
 							<label for="floatingTextarea2">Evstratégia - Objetivo Estratégico</label>
 						</div><br>
 					</div>
-
 					<!--Geracação de Impacto-->
 					<div class="tab-pane" id="nav-geracaoImpacto" role="tabpanel" aria-labelledby="nav-geracaoImpacto-tab" tabindex="0">
 						<div class="row g-2">
@@ -526,7 +507,6 @@
 							</div>
 						</div>
 					</div>
-
 					<!--Descrição detalhada-->
 					<div class="tab-pane" id="nav-descricaoDetalhada" role="tabpanel" aria-labelledby="nav-descricaoDetalhada-tab" tabindex="0">
 						<div class="row g-2">
@@ -617,7 +597,6 @@
 							</div>
 						</div>
 					</div>
-
 					<!--Stakeholders-->
 					<div class="tab-pane" id="nav-stakeholders" role="tabpanel" aria-labelledby="nav-stakeholders-tab" tabindex="0">
 						<div class="form-floating">
@@ -637,7 +616,6 @@
 							<label for="floatingInputGrid">Requisitos:</label>
 						</div><br>
 					</div>
-
 					<!--Escopo-->
 					<div class="tab-pane" id="nav-escopo" role="tabpanel" aria-labelledby="nav-escopo-tab" tabindex="0">
 						<div class="form-floating">
@@ -665,7 +643,6 @@
 							<label for="floatingTextarea2">Fatores externos</label>
 						</div><br>
 					</div>
-
 					<!--Equipe-->
 					<div class="tab-pane" id="nav-equipe" role="tabpanel" aria-labelledby="nav-equipe-tab" tabindex="0">
 						<div class="form-floating">
@@ -689,7 +666,6 @@
 							<label for="floatingInputGrid">Nome Profissional Externo</label>
 						</div><br>
 					</div>
-
 					<!--Custos-->
 					<div class="tab-pane" id="nav-custos" role="tabpanel" aria-labelledby="nav-custos-tab" tabindex="0">
 						<div class="row g-2">
@@ -743,7 +719,6 @@
 							</div>
 						</div>
 					</div>
-
 					<!--Riscos-->
 					<div class="tab-pane" id="nav-riscos" role="tabpanel" aria-labelledby="nav-riscos-tab" tabindex="0">
 						<div class="form-floating">
@@ -755,7 +730,6 @@
 							<label for="floatingTextarea2">Riscos do Projeto</label>
 						</div><br>
 					</div>
-
 					<!--Histórico-->
 					<div class="tab-pane" id="nav-historico" role="tabpanel" aria-labelledby="nav-historico-tab" tabindex="0">
 						<div class="form-floating">
@@ -774,21 +748,23 @@
 							<input type="text" class="form-control" id="floatingInputGrid">
 							<label for="floatingInputGrid">Responsável pelo registro</label>
 						</div><br>
-					</div>
-
-                                  <!--Botões: Salvar e cancelar-->
-                                  <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-                                    <button class="btn btn-success me-md-2" type="button">Salvar</button>
-                                    <button class="btn btn-success me-md-2" type="button">Consultar</button>
-                                    <button class="btn btn-success me-md-2" type="button">Alterar</button>
-                                    <button class="btn btn-success me-md-2" type="button">Excluir</button>
-                                    <button class="btn btn-success me-md-2" type="button">Listar</button>
-                                    <button class="btn btn-outline-dark" type="button">Cancelar</button>
-                                  </div>
-
+					</div>                
 				</div>
 			</div>
-		</div>
+		</div><br><br>
+  <!--Barra Fixa-->
+  <div class="btn-group fixed-bottom" role="group" aria-label="Basic radio toggle button group">
+   <input type="radio" class="btn-check" name="btnradio" id="btnradio1" autocomplete="off" checked>
+   <label class="btn btn-success" for="btnradio1">Salvar</label>
+   <input type="radio" class="btn-check" name="btnradio" id="btnradio2" autocomplete="off">
+   <label class="btn btn-success" for="btnradio2">Consultar</label>
+   <input type="radio" class="btn-check" name="btnradio" id="btnradio3" autocomplete="off">
+   <label class="btn btn-success" for="btnradio3">Alterar</label>
+   <input type="radio" class="btn-check" name="btnradio" id="btnradio4" autocomplete="off">
+   <label class="btn btn-success" for="btnradio4">Excluir</label>
+   <input type="radio" class="btn-check" name="btnradio" id="btnradio5" autocomplete="off">
+   <label class="btn btn-secondary" for="btnradio5">Cancelar</label>
+  </div>
 		<!--JS-->
 		<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
 	</body>
