@@ -3,23 +3,10 @@
  padding: 0;
 }
 body{
+ background-color: #f0f0f0;
  font-family: Arial, Helvetica, sans-serif;
 }
-.login{
- width: 300px;
- margin: auto;
- padding-top: 40px;
-}
-.navbar-brand{
- font-size: 30px;
- text-align: center;
- margin: auto;
-}
-.logo{
- width: 100px;
-}
 .form{
- width: 400px;
  margin: auto;
  padding-top: 40px;
 }
@@ -28,15 +15,12 @@ body{
  background-color: #fff;
  padding: 40px;
  border-radius: 10px;
- height: 520px;
- width: 400px;
 }
 .card-top{
  text-align: center;
- margin-bottom: 20px;
 }
 .card-group{
- margin-bottom: 20px;
+ margin-bottom: 15px;
 }
 .card-group >label{
  width: 100%;
@@ -45,7 +29,6 @@ body{
 }
 .card-group >input{
  border-radius: 10px;
- border-color: #dfdfdf;
  outline: 0;
  width: 100%;
  height: 35px;
@@ -64,26 +47,9 @@ body{
 .logar:hover{
  background-image: linear-gradient(to right, #019c01, #00FF00);
 }
-.esqSenha{
- padding-left: 29%;
- text-decoration: none;
-}
-.cadastrar{
- background-image: linear-gradient(to right, #00005c, #0202cc);
- width: 88%;
- height: 40px;
- border-radius: 30px;
- border: hidden;
- font-size: 18px;
- margin-left: 6%;
- padding-top: 6px;
- padding-left: 32%;
- text-decoration: none;
- color: #fff;
-}
-.cadastrar:hover{
- background-image: linear-gradient(to right, #020294, #0000ff);
+.imglogin{
+ width: 155px;
 }
 .h2{
- color: rgb(1, 0, 51);
+ color: rgb(2, 0, 109);
 }

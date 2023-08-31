@@ -10,9 +10,8 @@ body{
  height: 100%;
  display: inline-block;
 }
-.d-flex{
- padding-left: 5px;
- padding-right: 5px;
+.navbar-brand{
+ margin: auto;
 }
 .logo{
  width: 100px;
@@ -32,8 +31,18 @@ body{
  width: 18rem;
  border: none;
 }
-.card-img{
+.card-img-1{
  width: 260px;
+ height: 180px;
+ margin: auto;
+}
+.card-img-2{
+ width: 200px;
+ height: 180px;
+ margin: auto;
+}
+.card-img-3{
+ width: 180px;
  height: 180px;
  margin: auto;
 }
@@ -41,6 +50,6 @@ body{
  padding-left: 350px;
  margin-bottom: 50px;
 }
-.navbar{
- margin-left: 25%;
+.h1{
+ margin-left: -1px;
 }
