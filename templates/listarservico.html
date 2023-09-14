@@ -1,10 +1,249 @@
-<html>
-<head>
-<title>Serviço</title>
-</head>
-<body bgcolor="#ffffff">
-<center>
-<h1>Lista de Serviços</h1>
-</center>
-</body>
+<!DOCTYPE html>
+<html lang="pt-br">
+	<head>
+		<title>Lista de programas</title>
+		<!--CSS-->
+		<meta charset="utf-8">
+		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+		<link rel="aoercut icon" href="../../img/3PSTb.png" sizes="32x32" type="image/png">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+	</head>
+	<body>
+		<!--Cabeçalho da page-->
+		<header>
+			<!--Cor e formato-->
+			<nav class="navbar">
+				<div class="container-fluid">
+					<!--Logos-->
+					<a class="navbar-brand">
+						<img id="logo" src="../static/img/inpelogo.png" width="60px" disable>
+						<img class="logo" src="../static/img/3pst.png" width="60px" disable>
+					</a>
+					<span class="navbar-brand mb-0 h1">Sistema de Gerenciamento de Portfólio do INPE - v2.0</span>
+					<!--Botão 'recursivo'-->
+					<button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
+						<span class="navbar-toggler-icon"></span>
+					</button>
+					<!--Dropdown/ menu-->
+					<div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+						<div class="offcanvas-header">
+						  	<h5 class="offcanvas-title" id="offcanvasNavbarLabel">Menu</h5>
+						  	<button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+						</div>
+						<div class="offcanvas-body">
+							<!--Canto direito superior-->
+							<form class="d-flex mt-3" role="search">
+								<input class="form-control me-2" type="search" aria-label="Search">
+								<button class="btn btn-outline-success" type="submit">Buscar</button>
+							</form>
+							<ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+								<!--'menu': Home-->
+								<li class="nav-item">
+									<a class="nav-link active" aria-current="page" href="../templates/index.html">Home</a>
+								</li>
+								<!--'menu': Cadastrar-->
+								<li class="nav-item dropdown">
+									<a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Cadastrar</a>
+									<ul class="dropdown-menu">
+										<li><a class="dropdown-item" href="../templates/cadastrarprojeto.html">Novo projeto</a></li>
+										<li><a class="dropdown-item" href="../templates/cadastrarprograma.html">Novo programa</a></li>
+										<li>
+											<hr class="dropdown-divider">
+										</li>
+										<li><a class="dropdown-item" href="../templates/cadastrarcolaboradorinpe.html">Novo colaborador INPE</a></li>
+										<li><a class="dropdown-item" href="../templates/cadastrarcolaboradorexterno.html">Novo colaborador externo</a></li>
+										<li><a class="dropdown-item" href="../templates/cadastrarorganizacaoexterna.html">Nova organização externa</a></li>
+									</ul>
+								</li>
+								<!--'menu': Relatórios-->
+								<li class="nav-item dropdown">
+									<a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Relatórios</a>
+									<ul class="dropdown-menu">
+										<li><a class="dropdown-item" href="../templates/listarprojeto.html">Lista de projetos</a></li>
+										<li><a class="dropdown-item" href="../templates/listarprograma.html">Lista de programas</a></li>
+										<li><a class="dropdown-item" href="../templates/listarservico.html">Lista de serviço</a></li>
+										<li>
+											<hr class="dropdown-divider">
+										</li>
+										<li><a class="dropdown-item" href="../templates/projetosxprogramas.html">Projetos x Programas</a></li>
+									</ul>
+								</li>
+								<!--'menu': Ajuda-->
+								<li class="nav-item dropdown">
+									<a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Ajuda</a>
+									<ul class="dropdown-menu">
+										<li><a class="dropdown-item" href="../templates/sobre.html">Sobre</a></li>
+										<li><a class="dropdown-item" href="../templates/duvidasfrequentes.html">Dúvidas frequentes</a></li>
+										<li>
+											<hr class="dropdown-divider">
+										</li>
+										<li><a class="dropdown-item" href="../templates/opniõesperguntas.html">Opiniões e perguntas</a></li>
+									</ul>
+								</li>
+								<!--'menu': Catalago-->
+								<li class="nav-item">
+									<a class="nav-link active" aria-current="page" href="../templates/catalogodeiniciativasinstitucionais.html">Catalago de iniciativas</a>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</nav>
+		</header>
+		<br>
+		<!--Título-->
+		<h3 style="text-align: center;">Lista de serviços</h3><br>
+		<!--Cor do cabeçalho da tabela-->
+		<table class="table table-hover table-bordered">
+			<!--Tabela-->
+			<thead>
+				<!--Nome das colunas-->
+				<tr>
+					<th scope="col">Nome do programa</th>
+					<th scope="col">Responsável pelo programa</th>
+					<th scope="col">Unidade responsável</th>
+					<th scope="col">Situação do programa</th>
+				</tr>
+			</thead>
+			<!--Corpo da tabela-->
+			<tbody>
+				<tr>
+					<th scope="row">1</th>
+					<td>Mark</td>
+					<td>Otto</td>
+					<td>Jacob</td>
+				</tr>
+				<tr>
+					<th scope="row">2</th>
+					<td>Jacob</td>
+					<td>Thornton</td>
+					<td>Otto</td>
+				</tr>
+				<tr>
+					<th scope="row">3</th>
+					<td>Jacob</td>
+					<td>Mark</td>
+					<td>Otto</td>
+				</tr>
+    <tr>
+					<th scope="row">4</th>
+					<td>Jacob</td>
+					<td>Mark</td>
+					<td>Otto</td>
+				</tr>
+    <tr>
+					<th scope="row">5</th>
+					<td>Jacob</td>
+					<td>Mark</td>
+					<td>Otto</td>
+				</tr>
+    <tr>
+					<th scope="row">6</th>
+					<td>Jacob</td>
+					<td>Mark</td>
+					<td>Otto</td>
+				</tr>
+    <tr>
+					<th scope="row">7</th>
+					<td>Jacob</td>
+					<td>Mark</td>
+					<td>Otto</td>
+				</tr>
+    <tr>
+					<th scope="row">8</th>
+					<td>Jacob</td>
+					<td>Mark</td>
+					<td>Otto</td>
+				</tr>
+    <tr>
+					<th scope="row">9</th>
+					<td>Jacob</td>
+					<td>Mark</td>
+					<td>Otto</td>
+				</tr>
+    <tr>
+					<th scope="row">10</th>
+					<td>Jacob</td>
+					<td>Mark</td>
+					<td>Otto</td>
+				</tr>
+    <tr>
+					<th scope="row">11</th>
+					<td>Jacob</td>
+					<td>Mark</td>
+					<td>Otto</td>
+				</tr>
+    <tr>
+					<th scope="row">12</th>
+					<td>Jacob</td>
+					<td>Mark</td>
+					<td>Otto</td>
+				</tr>
+    <tr>
+					<th scope="row">13</th>
+					<td>Jacob</td>
+					<td>Mark</td>
+					<td>Otto</td>
+				</tr>
+    <tr>
+					<th scope="row">14</th>
+					<td>Jacob</td>
+					<td>Mark</td>
+					<td>Otto</td>
+				</tr>
+    <tr>
+					<th scope="row">15</th>
+					<td>Jacob</td>
+					<td>Mark</td>
+					<td>Otto</td>
+				</tr>
+    <tr>
+					<th scope="row">16</th>
+					<td>Jacob</td>
+					<td>Mark</td>
+					<td>Otto</td>
+				</tr>
+    <tr>
+					<th scope="row">17</th>
+					<td>Jacob</td>
+					<td>Mark</td>
+					<td>Otto</td>
+				</tr>
+    <tr>
+					<th scope="row">18</th>
+					<td>Jacob</td>
+					<td>Mark</td>
+					<td>Otto</td>
+				</tr>
+    <tr>
+					<th scope="row">19</th>
+					<td>Jacob</td>
+					<td>Mark</td>
+					<td>Otto</td>
+				</tr>
+    <tr>
+					<th scope="row">20</th>
+					<td>Jacob</td>
+					<td>Mark</td>
+					<td>Otto</td>
+				</tr>
+			</tbody>
+		</table>
+		<!--Passar page-->
+		<nav aria-label="Page navigation example">
+			<ul class="pagination justify-content-center">
+				<li class="page-item active"><a class="page-link" href="#">1</a></li>
+				<li class="page-item"><a class="page-link" href="#">2</a></li>
+				<li class="page-item"><a class="page-link" href="#">3</a></li>
+			</ul>
+		</nav><br><br>
+  <!--Barra Fixa-->
+  <div class="btn-group fixed-bottom" role="group" aria-label="Basic radio toggle button group">
+   <a href="../templates/cadastrarservico.html" class="btn btn-success">Salvar</a>
+   <a href="#" class="btn btn-success">Consultar</a>
+   <a href="#" class="btn btn-success">Alterar</a>
+   <a href="#" class="btn btn-success">Excluir</a>
+   <a href="../templates/index.html" class="btn btn-secondary">Cancelar</a>
+  </div>
+	</body>
 </html>
