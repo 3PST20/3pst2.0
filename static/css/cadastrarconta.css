@@ -51,7 +51,22 @@ body{
  height: 35px;
  padding-left: 5px;
 }
-.logar{
+.card-cadastro{
+ margin-bottom: 15px;
+}
+.card-cadastro >label{
+ width: 100%;
+ color: rgb(75, 75, 75);
+ display: block;
+}
+.card-cadastro >select{
+ border-radius: 10px;
+ outline: 0;
+ width: 102%;
+ height: 35px;
+ padding-left: 5px;
+}
+.cadastro{
  background-image: linear-gradient(to right, #008A00, #00FF00);
  width: 100%;
  height: 40px;
@@ -61,28 +76,8 @@ body{
  text-decoration: none;
  color: #fff;
 }
-.logar:hover{
+.cadastro:hover{
  background-image: linear-gradient(to right, #019c01, #00FF00);
-}
-.esqSenha{
- padding-left: 29%;
- text-decoration: none;
-}
-.cadastrar{
- background-image: linear-gradient(to right, #00005c, #0202cc);
- width: 88%;
- height: 40px;
- border-radius: 30px;
- border: hidden;
- font-size: 18px;
- margin-left: 6%;
- padding-top: 6px;
- padding-left: 32%;
- text-decoration: none;
- color: #fff;
-}
-.cadastrar:hover{
- background-image: linear-gradient(to right, #020294, #0000ff);
 }
 .h2{
  color: rgb(1, 0, 51);
