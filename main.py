@@ -1,40 +1,19 @@
-# This is a sample Python script.
+from flask import Flask
+from app.models import db
+from app.main import views, resources
+from flask_migrate import Migrate
 
-# Press Shift+F10 to execute it or replace it with your code.
-# Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
+app = Flask(__name__, template_folder='./app/templates', static_folder='./app/static')
+app.secret_key = "usuario-inpe"
+app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = True
+#configurações para a conexão com o banco de dados
+app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://postgres:123123@localhost/3pst'
 
-from flask import Flask, render_template, url_for
+db.init_app(app)
+migrate = Migrate(app, db)
 
+views.init_app(app)
+resources.init_app(app)
 
-import main
-
-app = Flask(__name__)
-# route -> site/
-# função -> o que você quer exibir naquela página
-# template
-
-@app.route("/")
-def index():
-    return render_template("index.html")
-
-@app.route('/<hostname>')
-def device(hostname):
-    if hostname in routers:
-        return 'hostname inválido'
-        #@app.errorhandler(404)
-        #def invalid_route(e):
-        #   return render_template('% hostname')
-    else:
-        return render_template(hostname)
-
-routers = ['r1']
-for router in routers:
-    #with app.test_request_context():
-        #print(url_for('device', hostname=router))
-        print('')
-
-# Press the green button in the gutter to run the script.
 if __name__ == '__main__':
-    app.run(debug=True)     #permite que as edições do código sejam automaticamente atualizadas
-
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
+    app.run(debug=True)
