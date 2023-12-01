@@ -8,6 +8,7 @@ body {
     background-color: white;
 }
 
+/* Header */
 .top {
     text-align: center;
 }
@@ -38,29 +39,71 @@ body {
     justify-content: space-between;
 }
 
-.text-td {
-    color: black;
+/* Title */
+.container-title {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 15px;
 }
 
-.card{
-    width: 95%;
+.title-text {
+    font-size: 26px;
+    text-align: center;
+}
+
+.title-controls {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    width: 96%;
+}
+
+/* Search */
+.search-input-container {
+    flex-grow: 1;
+}
+
+.search-input {
+    width: 250px;
+    background: url("../img/icon/search.svg") no-repeat;
+    background-position: 92% center;
+    background-size: 18px;
+}
+
+/* Select */
+.select-download-container {
+    margin-right: 15px;
+}
+
+.select-download {
+    width: 35px;
+    background: url("../img/icon/download.svg") no-repeat;
+    background-position: 10px;
+    background-size: 30px;
+}
+
+/* Button */
+.button-container{
+    align-items: flex-end;
+}
+
+/* Table */
+.card {
+    width: 96%;
     border: none;
     margin-left: auto;
     margin-right: auto;
+}
+
+.text-td {
+    color: black;
 }
 
 a:link {
     text-decoration: none;
 }
 
-a:visited {
-    text-decoration: none;
-}
-
 a:hover {
-    text-decoration: underline;
-}
-
-a:active {
     text-decoration: underline;
 }

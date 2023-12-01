@@ -3,15 +3,19 @@
 
 <head>
 	<title>Lista de projetos</title>
-	<!--CSS-->
+
 	<meta charset="utf-8">
+	<!--Bootstrap-->
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
 		integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+	<!--Bootstrap Icons-->
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.min.css">
+	<!--CSS-->
 	<link rel="stylesheet" href="../static/css/listarprojeto.css">
 	<link rel="aoercut icon" href="../static/img/3pst.png" sizes="32x32" type="image/png">
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<!-- <script src="{{ url_for('static', filename='js/cadastrarprojeto.js') }}"></script> -->
+	<script src="{{ url_for('static', filename='js/listarprojeto.js') }}" defer="defer"></script>
 </head>
 
 <body>
@@ -112,29 +116,48 @@
 		</nav>
 	</div>
 
-	<div class="card">
-		<h3 style="text-align: center;">Lista de projetos</h3>
+	<div class="container-title">
+		<div class="title-text">Lista de projetos</div>
+		<div class="title-controls">
+			<div class="search-input-container">
+				<input type="text" class="search-input form-control" id="input-search" onkeyup="search()"
+					placeholder="Pesquisar...">
+			</div>
+			<!-- <div class="select-download-container">
+				<select class="form-select select-download" id="download" aria-label="Floating label select example">
+					<option value="csv">CSV</option>
+					<option value="pdf">PDF</option>
+				</select>
+				<button onclick="htmlToCsv('ListagemProjetos.pdf');">Download CSV</button>
+			</div> -->
+			<div class="button-container">
+				<a class="btn btn-success me-md-2" type="button" href="/cadastrarprojeto">Cadastrar novo projeto</a>
+			</div>
+		</div>
+	</div>
 
-		<!--Cor do cabeçalho da tabela-->
-		<table class="table table-hover table-bordered center">
-			<!--Tabela-->
-			<thead>
-				<!--Nome das colunas-->
-				<tr>
-					<th scope="col">Nome do projeto</th>
-					<th scope="col">Responsável</th>
-					<th scope="col">Unidade responsável</th>
-					<th scope="col">Processo SEI</th>
-					<th scope="col">Categoria do projeto</th>
-					<th scope="col">Situação do projeto</th>
-					<th scope="col">Situação do TAP</th>
-					<th scope="col">Tipo de parceria</th>
-					<th scope="col">Processo SEI parceria</th>
-					<th scope="col">Prioridade</th>
-				</tr>
-			</thead>
-			<!--Corpo da tabela-->
-			<!-- {% for projeto in projetos %}
+	<div class="card">
+		<div class="table-container">
+			<!-- Cor do cabeçalho da tabela -->
+			<table class="table table-hover table-bordered center" data-toggle="table" data-search="true"
+				data-show-columns="true" id="table">
+				<!-- Tabela -->
+				<thead>
+					<!--Nome das colunas-->
+					<tr>
+						<th scope="col">Nome do projeto</th>
+						<th scope="col">Responsável</th>
+						<th scope="col">Unidade responsável</th>
+						<th scope="col">Processo SEI</th>
+						<th scope="col">Categoria do projeto</th>
+						<th scope="col">Situação do projeto</th>
+						<th scope="col">Situação do TAP</th>
+						<th scope="col">Prioridade</th>
+						<th scope="col">Unidade Executora</th>
+					</tr>
+				</thead>
+				<!--Corpo da tabela-->
+				<!-- {% for projeto in projetos %}
 		<tbody>
 			{% for identificacao in projeto.identificacoes %}
 			<tr>
@@ -156,35 +179,35 @@
 			{% endfor %}
 		</tbody>
 		{% endfor %} -->
-			<tbody>
-				<tr>
-					<td class="th-sm"><a class="text-td" href="/cadastrarprojeto">Nome do projeto</a></td>
-					<td class="th-sm">Responsável</td>
-					<td class="th-sm">Unidade responsável</td>
-					<td class="th-sm">Processo SEI</td>
-					<td class="th-sm">Categoria do projeto</td>
-					<td class="th-sm">Situação do projeto</td>
-					<td class="th-sm">Situação do TAP</td>
-					<td class="th-sm">Tipo de parceria</td>
-					<td class="th-sm">Processo SEI parceria</td>
-					<td class="th-sm">Prioridade</td>
-					</a>
-				</tr>
+				<tbody>
+					<tr>
+						<td class="th-sm"><a class="text-td" href="/cadastrarprojeto">Nome do projeto 1</a></td>
+						<td class="th-sm">Responsável 1</td>
+						<td class="th-sm">Unidade responsável 1</td>
+						<td class="th-sm">Processo SEI 1</td>
+						<td class="th-sm">Categoria do projeto 1</td>
+						<td class="th-sm">Situação do projeto 1</td>
+						<td class="th-sm">Situação do TAP 1</td>
+						<td class="th-sm">Prioridade 1</td>
+						<td class="th-sm">Unidade Executora 1</td>
+						</a>
+					</tr>
 
-				<tr>
-					<td class="th-sm"><a class="text-td" href="/cadastrarprojeto">Nome do projeto</a></td>
-					<td class="th-sm">Responsável</td>
-					<td class="th-sm">Unidade responsável</td>
-					<td class="th-sm">Processo SEI</td>
-					<td class="th-sm">Categoria do projeto</td>
-					<td class="th-sm">Situação do projeto</td>
-					<td class="th-sm">Situação do TAP</td>
-					<td class="th-sm">Tipo de parceria</td>
-					<td class="th-sm">Processo SEI parceria</td>
-					<td class="th-sm">Prioridade</td>
-				</tr>
-			</tbody>
-		</table>
+					<tr>
+						<td class="th-sm"><a class="text-td" href="/cadastrarprojeto">Nome do projeto 2</a></td>
+						<td class="th-sm">Responsável 2</td>
+						<td class="th-sm">Unidade responsável 2</td>
+						<td class="th-sm">Processo SEI 2</td>
+						<td class="th-sm">Categoria do projeto 2</td>
+						<td class="th-sm">Situação do projeto 2</td>
+						<td class="th-sm">Situação do TAP 2</td>
+						<td class="th-sm">Prioridade 2</td>
+						<td class="th-sm">Unidade Executora 2</td>
+						</a>
+					</tr>
+				</tbody>
+			</table>
+		</div>
 	</div>
 	<!--Passar page-->
 	<!-- <nav aria-label="Page navigation example">
