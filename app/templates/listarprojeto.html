@@ -131,7 +131,7 @@
 				<button onclick="htmlToCsv('ListagemProjetos.pdf');">Download CSV</button>
 			</div> -->
 			<div class="button-container">
-				<a class="btn btn-success me-md-2" type="button" href="/cadastrarprojeto">Cadastrar novo projeto</a>
+				<button class="btn btn-success me-md-2" onclick="registerProject()">Cadastrar novo projeto</button>
 			</div>
 		</div>
 	</div>
@@ -157,29 +157,31 @@
 					</tr>
 				</thead>
 				<!--Corpo da tabela-->
-				<!-- {% for projeto in projetos %}
-		<tbody>
-			{% for identificacao in projeto.identificacoes %}
-			<tr>
-				<td>{{ projeto.nomeProjeto }}</td>
-				<td>{{ identificacao.responsavelProjeto }}</td>
-				<td>{{ identificacao.unidadeResponsavel }}</td>
-				<td>{{ projeto.processoSEIProjeto }}</td>
-				<td>{{ identificacao.categoriaProjeto }}</td>
-				<td>{{ identificacao.situacaoProjeto }}</td>
-				<td>{{ identificacao.situacaoTAP }}</td>
-				<td>{{ identificacao.tipoParceria }}</td>
-				<td>{{ identificacao.processoSEIParceria }}</td>
-				<td>{{ identificacao.prioridadeINPE }}</td>
-				<td width="130">
-					<a class="btn btn-secondary btn-sm" href="/atualizarprojeto/{{projeto.id}}">Editar</a>
-					<a class="btn btn-danger btn-delete btn-sm" data-project-id="{{ projeto.id }}">Deletar</a>
-				</td>
-			</tr>
-			{% endfor %}
-		</tbody>
-		{% endfor %} -->
+
 				<tbody>
+					{% for projeto in projetos %}
+					{% for stakeholder in projeto.stakeholder %}
+					<tr>
+						<td><a class="text-td" href="/atualizarprojeto/{{projeto.id}}">{{ projeto.nomeProjeto }}</a>
+						</td>
+						<td>{{ stakeholder.stk_parteInteressada }}</td>
+						<td>{{ stakeholder.stk_expectativa }}</td>
+						<td>{{ projeto.processoSEIProjeto }}</td>
+						<td>{{ stakeholder.stk_requisito }}</td>
+						<!-- <td>{{ stakeholder.situacaoProjeto }}</td>
+						<td>{{ stakeholder.situacaoTAP }}</td>
+						<td>{{ stakeholder.tipoParceria }}</td>
+						<td>{{ stakeholder.processoSEIParceria }}</td>
+						<td>{{ stakeholder.prioridadeINPE }}</td> -->
+						<!-- <td width="130">
+							<a class="btn btn-secondary btn-sm" href="/atualizarprojeto/{{projeto.id}}">Editar</a>
+							<a class="btn btn-danger btn-delete btn-sm" data-project-id="{{ projeto.id }}">Deletar</a>
+						</td> -->
+					</tr>
+					{% endfor %}
+					{% endfor %}
+				</tbody>
+				<!-- <tbody>
 					<tr>
 						<td class="th-sm"><a class="text-td" href="/cadastrarprojeto">Nome do projeto 1</a></td>
 						<td class="th-sm">Responsável 1</td>
@@ -205,7 +207,7 @@
 						<td class="th-sm">Unidade Executora 2</td>
 						</a>
 					</tr>
-				</tbody>
+				</tbody> -->
 			</table>
 		</div>
 	</div>

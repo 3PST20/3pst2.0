@@ -1,5 +1,6 @@
 from flask import Response, render_template, url_for
 import json
+from ..models import Projeto, Stakeholder
 
 def init_app(app):
     @app.route("/")
@@ -52,9 +53,15 @@ def init_app(app):
 
     @app.route("/listarprojeto", methods=['GET'])
     def seleciona_projetos():
-        # proj_list = Projeto.query.all()
-        # return render_template("listarprojeto.html", projetos=proj_list)  
-        return render_template("listarprojeto.html")
+        proj_list = Projeto.query.all()
+        return render_template("listarprojeto.html", projetos=proj_list)  
+        # return render_template("listarprojeto.html")
+    
+    @app.route("/atualizarprojeto/<id>", methods=['GET', 'POST'])
+    def atualiza_Projeto(id):
+        projeto_list = Projeto.query.filter_by(id=id).first()
+        stk_list = Stakeholder.query.filter_by(projeto_id=id).first()
+        return render_template("atualizarprojeto.html", projeto=projeto_list, stakeholder=stk_list) 
 
 def gera_response(status, nome_conteudo, conteudo, mensagem=False):
     body = {}

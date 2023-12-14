@@ -11,7 +11,7 @@
 	<link rel="aoercut icon" href="../static/img/3pst.png" sizes="32x32" type="image/png">
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<script src="{{ url_for('static', filename='js/cadastrarprojeto.js') }}"></script>
+	<script src="{{ url_for('static', filename='js/atualizarprojeto.js') }}"></script>
 </head>
 
 <body>
@@ -113,7 +113,7 @@
 	</div>
 	<!--Barra de Cadastro-->
 	<div class="card text-center" id="abas">
-		<h4>Cadastro de projeto</h4>
+		<h4>Informações do projeto</h4>
 		<div class="card-header">
 			<ul class="nav nav-tabs" id="nav-tab" role="tablist">
 				<li class="nav-item">
@@ -168,7 +168,7 @@
 				</li>
 			</ul>
 
-			<form data-form-action='/cadastroProjeto' data-form-id='projetoForm' class="tab-form" method="POST">
+			<form action='/atualizaProjeto/{{ projeto.id }}' data-form-id='projetoForm' class="tab-form" method="POST">
 				<div class="tab-content" id="nav-tabContent">
 
 					<!--Identificação-->
@@ -179,12 +179,12 @@
 							<!--Lado esquerdo-->
 							<div class="col-md-6" id="lado_esquerdo"><br>
 								<div class="form-floating">
-									<input type="text" class="form-control" id="floatingInputGrid" name="nomeProjeto">
+									<input type="text" class="form-control" id="floatingInputGrid" name="nomeProjeto" value="{{ projeto.nomeProjeto }}">
 									<label for="floatingInputGrid">Nome do Projeto</label>
 								</div><br>
 								<div class="form-floating">
 									<input type="text" class="form-control" id="floatingInputGrid"
-										name="processoSEIProjeto">
+										name="processoSEIProjeto" value="{{ projeto.processoSEIProjeto}}">
 									<label for="floatingInputGrid">Processo SEI do Projeto</label>
 								</div><br>
 								<div class="form-floating">
@@ -1848,16 +1848,16 @@
 						<div class="row g-2 container-fluid">
 							<div><br>
 								<div class="form-floating">
-									<input type="text" class="form-control" id="floatingInputGrid" name="stk_parteInteressada">
+									<input type="text" class="form-control" id="floatingInputGrid" name="stk_parteInteressada" value="{{ stakeholder.stk_parteInteressada }}">
 									<label for="floatingInputGrid">Parte interessada</label>
 								</div><br>
 								<div class="form-floating">
 									<input type="text" class="form-control" id="floatingInputGrid"
-										name="stk_expectativa">
+										name="stk_expectativa" value="{{ stakeholder.stk_expectativa }}">
 									<label for="floatingInputGrid">Expectativas e interesses</label>
 								</div><br>
 								<div class="form-floating">
-									<input type="text" class="form-control" id="floatingInputGrid" name="stk_requisito">
+									<input type="text" class="form-control" id="floatingInputGrid" name="stk_requisito" value="{{ stakeholder.stk_requisito }}">
 									<label for="floatingInputGrid">Requisitos:</label>
 								</div><br>
 							</div>
@@ -2069,10 +2069,10 @@
 
 					<!--Botões: Salvar e cancelar-->
 					<div class="d-grid gap-2 d-md-flex justify-content-md-end">
-						<button class="btn btn-success me-md-2" type="button" id="btnSalvar">Salvar</button>
+						<button class="btn btn-success btn-update me-md-2" type="button">Salvar</button>
 						<!-- <button class="btn btn-success me-md-2" type="button">Consultar</button> -->
-						<!-- <button class="btn btn-success me-md-2" type="button">Alterar</button>
-						<button class="btn btn-danger me-md-2" type="button">Excluir</button> -->
+						<button class="btn btn-success me-md-2" type="button">Alterar</button>
+						<button class="btn btn-danger me-md-2" type="button">Excluir</button>
 						<!-- <button class="btn btn-success me-md-2" type="button">Listar</button> -->
 						<button class="btn btn-outline-dark" type="button">Cancelar</button>
 					</div>
