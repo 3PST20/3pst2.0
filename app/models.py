@@ -9,14 +9,14 @@ class Projeto(db.Model):
     nomeProjeto = db.Column(db.String(140), default="")
     processoSEIProjeto = db.Column(db.String(140), default="")
 
-    stakeholder = db.relationship('Stakeholder', backref='projeto', lazy='dynamic')
+    stakeholder = db.relationship('Stakeholder', backref='projeto', lazy='dynamic', passive_deletes=True)
 
 
 class Stakeholder(db.Model):
     #atributos conforme o modelo físico
     __tablename__ = 'stakeholder'
     stk_id = db.Column(db.Integer, primary_key=True)
-    projeto_id = db.Column(db.Integer, db.ForeignKey('projeto.id'))
+    projeto_id = db.Column(db.Integer, db.ForeignKey('projeto.id', ondelete='CASCADE'))
 
     stk_parteInteressada = db.Column(db.Text, default="")
     stk_expectativa = db.Column(db.Text, default="")

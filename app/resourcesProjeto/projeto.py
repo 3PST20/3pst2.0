@@ -76,3 +76,21 @@ def init_app(app):
             print(e)
             db.session.rollback()
             return gera_response(400, "projeto", {}, 'Erro ao salvar')
+
+    # Deletar
+    @app.route('/deletaProjeto/<int:projeto_id>', methods=['DELETE'])
+    def deleta_projeto(projeto_id):
+        try:
+            projeto = Projeto.query.get(projeto_id)
+            if projeto is None:
+                return gera_response(404, "projeto", {}, 'Projeto não encontrado')
+
+            db.session.delete(projeto)
+            db.session.commit()
+
+            return gera_response(200, "projeto", {}, 'Deletado com sucesso')
+        except Exception as e:
+            print(e)
+            db.session.rollback()
+            return gera_response(400, "projeto", {}, 'Erro ao deletar')
+    

@@ -26,3 +26,30 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 });
+
+//Deletar o projeto
+document.addEventListener('DOMContentLoaded', function () {
+  var btnDelete = document.getElementById('btnDelete');
+  if (btnDelete) {
+    btnDelete.addEventListener('click', function () {
+      var projetoId = btnDelete.getAttribute('data-project-id');
+      console.log('projetoId:', projetoId);
+      if (projetoId && confirm(`Gostaria de excluir o projeto ${projetoId}?`)) {
+        fetch(`/deletaProjeto/${projetoId}`, {
+          method: 'DELETE'
+        })
+          .then(function (response) {
+            return response.json();
+          })
+          .then(function (data) {
+            alert(data.mensagem);
+            window.location.href = '/listarprojeto';
+          })
+          .catch(function (error) {
+            alert("Erro ao deletar o projeto. Verifique o console para mais detalhes.");
+            console.error(error);
+          });
+      }
+    });
+  }
+});
