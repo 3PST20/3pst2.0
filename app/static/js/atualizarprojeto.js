@@ -18,6 +18,7 @@ document.addEventListener("DOMContentLoaded", function () {
         })
         .then(function (data) {
           alert(data.mensagem);
+          window.location.href = '/listarprojeto';
         })
         .catch(function (error) {
           alert("Erro ao atualizar o projeto. Verifique o console para mais detalhes.");
@@ -34,7 +35,7 @@ document.addEventListener('DOMContentLoaded', function () {
     btnDelete.addEventListener('click', function () {
       var projetoId = btnDelete.getAttribute('data-project-id');
       console.log('projetoId:', projetoId);
-      if (projetoId && confirm(`Gostaria de excluir o projeto ${projetoId}?`)) {
+      if (projetoId && confirm("Gostaria de excluir o projeto?")) {
         fetch(`/deletaProjeto/${projetoId}`, {
           method: 'DELETE'
         })
@@ -53,3 +54,19 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   }
 });
+
+//Habilitar os campos de edição
+function habilitarInput() {
+  const inputs = document.querySelectorAll(".form-control, .form-select");
+  inputs.forEach(input => {
+    input.disabled = false;
+  })
+  alert("Campos habilitados para edição");
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+
+  var btnAlterar = document.getElementById('btnAlterar');
+  btnAlterar.disabled = true;
+  
+  var btnSalvar = document.getElementById('btnSalvar');
+  btnSalvar.disabled = false;
+}

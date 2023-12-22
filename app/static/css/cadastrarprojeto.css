@@ -44,4 +44,10 @@ body {
     justify-content: space-between;
 }
 
+.form-floating > input + label:after {
+   background: rgba(255, 255, 255, 0) !important;
+}
 
+.form-floating > textarea + label:after {
+   background: rgba(255, 255, 255, 0) !important;
+}
