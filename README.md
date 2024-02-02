@@ -23,7 +23,7 @@ Nesta pasta, ficarão os arquivos e informações referentes a plataforma web do
 
 
 ## Frontend Initialization:
-- ``flask --app main run``
+- ``python run.py``
 
 ## Local Database initialization:  
 - Main.py line 8:``app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://owner:password@localhost/database'``
