@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <title>Detalhes do Perfil</title>
+
+    <meta charset="utf-8">
+    <!--Bootstrap-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <!--Bootstrap Icons-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.min.css">
+    <!--CSS-->
+    <link rel="stylesheet" href="../static/css/detalhesperfil.css">
+    <link rel="aoercut icon" href="../static/img/3pst.png" sizes="32x32" type="image/png">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="{{ url_for('static', filename='js/detalhesperfil.js') }}" defer="defer"></script>
+</head>
+
+<body>
+    <!--Cabeçalho da page-->
+    <div class="d-flex flex-row">
+        <div class="p-2">
+            <a href="https://www.gov.br/inpe/pt-br"><img class="img-fluid image" src="../static/img/inpelogo.png"
+                    alt="logo-inpe"></a>
+            <img class="img-fluid image" src="../static/img/3pst.png" alt="logo-3pst">
+            <div class="p-4 text-header">Sistema de Gerenciamento de Portfólio do INPE - V2.0</div>
+        </div>
+
+        <!--Cor e formato-->
+        <nav class="navbar navbar-light bg-lignt">
+            <div class="container-fluid">
+                <!--Botão 'recursivo'-->
+                <!--<button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">-->
+                <div class="options-navbar">
+                    <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas"
+                        data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar"
+                        aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon "></span>
+                    </button>
+                </div>
+                <!--Dropdown/ menu-->
+                <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar"
+                    aria-labelledby="offcanvasNavbarLabel">
+                    <div class="offcanvas-header">
+                        <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Menu</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                    </div>
+                    <div class="offcanvas-body">
+                        <!--Canto direito superior-->
+                        <form class="d-flex mt-3" role="search">
+                            <input class="form-control me-2" type="search" aria-label="Search">
+                            <button class="btn btn-outline-success" type="submit">Buscar</button>
+                        </form>
+                        <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+                            <!--'menu': Home-->
+                            <li class="nav-item">
+                                <a class="nav-link active" aria-current="page" href="/">Home</a>
+                            </li>
+                            <!--'menu': Cadastrar-->
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                                    aria-expanded="false">Cadastrar</a>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item" href="/cadastrarprojeto">Novo projeto</a></li>
+                                    <li><a class="dropdown-item" href="/cadastrarprograma">Novo programa</a></li>
+                                    <li>
+                                        <hr class="dropdown-divider">
+                                    </li>
+                                    <li><a class="dropdown-item" href="/cadastrarcolaboradorinpe">Novo colaborador
+                                            INPE</a></li>
+                                    <li><a class="dropdown-item" href="/cadastrarcolaboradorexterno">Novo colaborador
+                                            externo</a></li>
+                                    <li><a class="dropdown-item" href="/cadastrarorganizacaoexterna">Nova organização
+                                            externa</a></li>
+                                </ul>
+                            </li>
+                            <!--'menu': Relatórios-->
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                                    aria-expanded="false">Relatórios</a>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item" href="/listarprojeto">Lista de projetos</a></li>
+                                    <li><a class="dropdown-item" href="/listarprograma">Lista de programas</a></li>
+                                    <li><a class="dropdown-item" href="/listarservico">Lista de serviços</a></li>
+                                    <li>
+                                        <hr class="dropdown-divider">
+                                    </li>
+                                    <li><a class="dropdown-item" href="/projetosxprogramas">Projetos x Programas</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <!--'menu': Ajuda-->
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                                    aria-expanded="false">Ajuda</a>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item" href="/sobre">Sobre</a></li>
+                                    <li><a class="dropdown-item" href="/duvidasfrequentes">Dúvidas frequentes</a></li>
+                                    <li>
+                                        <hr class="dropdown-divider">
+                                    </li>
+                                    <li><a class="dropdown-item" href="/opnioesperguntas">Opiniões e perguntas</a></li>
+                                </ul>
+                            </li>
+                            <!--'menu': Catalago-->
+                            <li class="nav-item">
+                                <a class="nav-link active" aria-current="page"
+                                    href="/catalogodeiniciativasinstitucionais">Catalago de iniciativas</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </div>
+
+    <form action='' data-form-id='userForm' class="tab-form" method="POST">
+        <div class="card">
+            <div class="card-top">
+                <h2>Informações do perfil</h2>
+            </div>
+            <div class="card-group">
+                <label class="form-label">Nome</label>
+                <input type="text" name="nome" class="form-control" placeholder="Nome completo" required value="nome do usuário" disabled>
+
+                <label class="form-label">E-mail</label>
+                <input type="email" name="email" class="form-control" placeholder="E-mail institucional" required value="e-mail do usuário" disabled>
+
+                <label class="form-label">Tipo de usuário</label>
+                <select class="form-select" name="tipoUsuario" required disabled>
+                    <option selected>tipo do usuário</option>
+                    <option value="convidado">Convidado</option>
+                    <option value="padrao">Padrão</option>
+                    <option value="adm">Administrador</option>
+                </select>
+
+                <!-- <label class="form-label">Senha</label>
+                <input type="password" name="password" minlength="6" maxlength="14" class="form-control"
+                    placeholder="Entre 6 a 14 caracteres" required> -->
+                <!-- <div class="card-group btn">
+                <button class="btn btn-success" type="submit">Cadastrar</button>
+            </div> -->
+
+                <div class="buttons">
+                    <button class="btn btnBottom btn-success btn-update" type="button" id="btnSalvar"
+                        disabled="true">Salvar</button>
+                    <button class="btn btnBottom btn-success" type="button" id="btnAlterar"
+                        onclick="habilitarInput()">Alterar</button>
+                    <button class="btn btnBottom btn-danger" type="button" id="btnDelete" data-project-id="">Deletar conta</button>
+                    <!-- <a class="btn btn-outline-dark" type="button" href="/">Cancelar</a> -->
+                </div>
+            </div>
+        </div>
+    </form>
+
+    <script type="text/javascript"
+        src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
