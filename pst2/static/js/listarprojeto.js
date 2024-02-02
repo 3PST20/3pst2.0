@@ -37,7 +37,7 @@ function registerProject() {
                     console.log("Projeto ID:", projetoId);
             
                     // Construir a URL de redirecionamento
-                    const redirectURL = `/cadastrarProjeto/${projetoId}`;
+                    const redirectURL = `/novoProjeto/${projetoId}`;
                     console.log("Redirecionando para:", redirectURL);
             
                     // Redirecionar para a tela de cadastro do projeto recém-criado

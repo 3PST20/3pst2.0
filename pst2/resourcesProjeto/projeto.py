@@ -15,12 +15,12 @@ def cadastrar_projeto(request):
 
 # Cadastrar
 @app.route('/cadastroProjeto', methods=['POST'])
-@app.route('/cadastrarProjeto/<int:projeto_id>', methods=['POST'])
+# @app.route('/novoProjeto/<int:projeto_id>', methods=['POST'])
 def cria_projeto():
     try:
         projeto = cadastrar_projeto(request)
 
-        # Agora você pode acessar o ID do projeto após o commit
+        # Acessar o ID do projeto após o commit
         projeto_id = projeto.id
 
         # Parâmetros stakeholders
@@ -34,7 +34,7 @@ def cria_projeto():
         db.session.add(stakeholder)
         db.session.commit()
 
-        # Inclua o ID do projeto na resposta JSON
+        # Incluir o ID do projeto no JSON
         response_data = {
             "projeto": {
                 "id": projeto_id,
@@ -44,6 +44,18 @@ def cria_projeto():
         }
 
         return gera_response(201, "projeto", response_data, 'Salvo com sucesso')
+    except Exception as e:
+        print(e)
+        db.session.rollback()
+        return gera_response(400, "projeto", {}, 'Erro ao cadastrar')
+
+# Cadastrar atrvés da listagem
+@app.route('/novoProjeto/<int:projeto_id>', methods=['POST'])
+def novo_projeto(projeto_id):
+    try:
+        # projeto = cadastrar_projeto(request)
+        cria_projeto(projeto_id)
+
     except Exception as e:
         print(e)
         db.session.rollback()
@@ -63,7 +75,7 @@ def atualiza_projeto(projeto_id):
         projeto.nomeProjeto = request.form.get('nomeProjeto')
         projeto.processoSEIProjeto = request.form.get('processoSEIProjeto')
 
-        # Atualizar dados do stakeholder associado
+        # Atualizar dados do stakeholder (FK)
         stakeholder = Stakeholder.query.filter_by(projeto_id=projeto.id).first()
         if stakeholder is not None:
             stakeholder.stk_parteInteressada = request.form.get('stk_parteInteressada')

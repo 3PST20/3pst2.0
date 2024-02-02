@@ -76,6 +76,12 @@ def atualiza_Projeto(id):
     stk_list = Stakeholder.query.filter_by(projeto_id=id).first()
     return render_template("atualizarprojeto.html", projeto=projeto_list, stakeholder=stk_list) 
 
+@app.route("/novoProjeto/<id>", methods=['GET', 'POST'])
+def novo_Projeto(id):
+    projeto_list = Projeto.query.filter_by(id=id).first()
+    stk_list = Stakeholder.query.filter_by(projeto_id=id).first()
+    return render_template("cadastrarprojeto.html", projeto=projeto_list, stakeholder=stk_list) 
+
 def gera_response(status, nome_conteudo, conteudo, mensagem=False):
     body = {}
     body[nome_conteudo] = conteudo
