@@ -40,7 +40,7 @@ document.addEventListener("DOMContentLoaded", function () {
         })
         .then(function (data) {
           alert(data.mensagem);
-          form.reset();
+          window.location.href = '/home';
         })
         .catch(function (error) {
           alert("Erro ao cadastrar o projeto. Verifique o console para mais detalhes.");

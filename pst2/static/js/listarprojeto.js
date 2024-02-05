@@ -24,32 +24,7 @@ function registerProject() {
     let text = "Gostaria de cadastrar um novo projeto?";
     if (confirm(text) == true) {
         console.log("Começa aqui");
-        fetch('/cadastroProjeto', {
-            method: 'POST'
-        })
-            .then(response => response.json())
-            .then(json => {
-                console.log(JSON.stringify(json));
-            
-                // Verificar se o ID do projeto está presente na resposta JSON
-                if (json.projeto && json.projeto.projeto && json.projeto.projeto.id) {
-                    const projetoId = json.projeto.projeto.id;
-                    console.log("Projeto ID:", projetoId);
-            
-                    // Construir a URL de redirecionamento
-                    const redirectURL = `/novoProjeto/${projetoId}`;
-                    console.log("Redirecionando para:", redirectURL);
-            
-                    // Redirecionar para a tela de cadastro do projeto recém-criado
-                    window.location.href = redirectURL;
-                } else {
-                    console.error("ID do projeto ausente na resposta JSON");
-                }
-            })            
-            .catch(error => {
-                alert("Erro ao cadastrar o projeto. Verifique o console para mais detalhes.");
-                console.error(error);
-            });
+        window.location.href = '/cadastrarprojeto';
     }
 }
 
