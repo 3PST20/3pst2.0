@@ -21,8 +21,8 @@ class Projeto(db.Model):
     __tablename__ = 'projeto'
     id = db.Column(db.Integer, primary_key=True)
 
-    nomeProjeto = db.Column(db.String(140), default="")
-    processoSEIProjeto = db.Column(db.String(140), default="")
+    nomeProjeto = db.Column(db.String(140), nullable=False)
+    processoSEIProjeto = db.Column(db.String(140), nullable=False)
 
     stakeholder = db.relationship('Stakeholder', backref='projeto', lazy='dynamic', passive_deletes=True)
 
@@ -33,9 +33,9 @@ class Stakeholder(db.Model):
     stk_id = db.Column(db.Integer, primary_key=True)
     projeto_id = db.Column(db.Integer, db.ForeignKey('projeto.id', ondelete='CASCADE'))
 
-    stk_parteInteressada = db.Column(db.Text, default="")
-    stk_expectativa = db.Column(db.Text, default="")
-    stk_requisito = db.Column(db.Text, default="")
+    stk_parteInteressada = db.Column(db.Text)
+    stk_expectativa = db.Column(db.Text)
+    stk_requisito = db.Column(db.Text)
 
     def to_json(self):
         return{"id": self.stk_id, "parteInteressada": self.stk_parteInteressada, "expectativasInteresse": self.stk_expectativa, "requisitos": self.stk_requisito}
