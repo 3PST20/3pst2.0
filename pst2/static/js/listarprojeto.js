@@ -1,3 +1,8 @@
+/**
+ * A função de pesquisa filtra uma tabela com base na entrada do usuário.
+ * @date 2024-02-07
+ * @author Ana Carolina
+ */
 function search() {
     var input, filter, table, tr, td, i, j, txtValue;
     input = document.getElementById("input-search");
@@ -20,6 +25,12 @@ function search() {
     }
 }
 
+/**
+ * A função "registerProject" solicita ao usuário que confirme se deseja registrar 
+ * um novo projeto e os redireciona para a página de registro se confirmarem.
+ * @date 2024-02-07
+ * @author Ana Carolina
+ */
 function registerProject() {
     let text = "Gostaria de cadastrar um novo projeto?";
     if (confirm(text) == true) {
@@ -28,6 +39,13 @@ function registerProject() {
     }
 }
 
+/**
+ * A função `htmlToCsv` converte uma tabela HTML em um arquivo CSV e faz o download.
+ * @date 2024-02-07
+ * @author Ana Carolina
+ * @param { string } filename - O parâmetro `filename` é uma string que representa 
+ * o nome do arquivo CSV que será baixado.
+ */
 function htmlToCsv(filename) {
     var data = []
     var rows = document.querySelectorAll("table tr")
@@ -44,6 +62,13 @@ function htmlToCsv(filename) {
     downloadCSVFile(data.join("\n"), filename)
 }
 
+/**
+ * A função `downloadCSVFile` é responsável por criar um arquivo CSV e iniciar seu download.
+ * @date 2024-02-07
+ * @author Ana Carolina
+ * @param { string } csv - O parâmetro `csv` é uma string que representa o conteúdo do arquivo CSV que você deseja baixar.
+ * @param { string } filename - O parâmetro 'filename' é uma string que especifica o nome do arquivo a ser baixado.
+ */
 function downloadCSVFile(csv, filename) {
     var csv_file, download_link
     csv_file = new Blob([csv], { type: "text/csv" });
