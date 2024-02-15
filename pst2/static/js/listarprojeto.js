@@ -4,7 +4,7 @@
 // JSDoc 4.0.2
 // Módulo: 
 
-//---------------- Histótico de Revisão --------------------
+//---------------- Histórico de Revisão --------------------
 //      Nome                      Data
 // Ana Carolina Neves          00/00/2023   
 
