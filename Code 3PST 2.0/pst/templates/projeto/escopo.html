@@ -1,0 +1,27 @@
+{{ form.hidden_tag() }}
+<div class="row g-2 container-fluid">
+    <div class="col-md-6" id="lado_direito">
+        <div class="form-group">
+            {{ form.premissasProjeto.label(class="form-control-label") }}
+            {{ form.premissasProjeto(class="form-control form-control-lg") }}
+        </div>
+        <div class="form-group">
+            {{ form.restricoesProjeto.label(class="form-control-label") }}
+            {{ form.restricoesProjeto(class="form-control form-control-lg") }}
+        </div>
+        <div class="form-group">
+            {{ form.escopoProjeto.label(class="form-control-label") }}
+            {{ form.escopoProjeto(class="form-control form-control-lg") }}
+        </div>
+    </div>
+    <div class="col-md-6" id="lado_esquerdo">
+        <div class="form-group">
+            {{ form.exclusoesProjeto.label(class="form-control-label") }}
+            {{ form.exclusoesProjeto(class="form-control form-control-lg") }}
+        </div>
+        <div class="form-group">
+            {{ form.fatoresExternos.label(class="form-control-label") }}
+            {{ form.fatoresExternos(class="form-control form-control-lg") }}
+        </div>
+    </div>
+</div>

@@ -1,0 +1,35 @@
+{{ form.hidden_tag() }}
+<div class="row g-2 container-fluid">
+    <div class="col-md-6" id="lado_direito">
+        <div class="form-group">
+            {{ form.perspectivaPopulacao.label(class="form-control-label") }}
+            {{ form.perspectivaPopulacao(class="form-control form-control-lg") }}
+        </div>
+        <div class="form-group">
+            {{ form.missaoMCTI.label(class="form-control-label") }}
+            {{ form.missaoMCTI(class="form-control form-control-lg") }}
+        </div>
+        <div class="form-group">
+            {{ form.perspectivaGestaoMCTI.label(class="form-control-label") }}
+            {{ form.perspectivaGestaoMCTI(class="form-control form-control-lg") }}
+        </div>
+        <div class="form-group">
+            {{ form.perspectivaGestaoINPE.label(class="form-control-label") }}
+            {{ form.perspectivaGestaoINPE(class="form-control form-control-lg") }}
+        </div>
+    </div>
+    <div class="col-md-6" id="lado_esquerdo">
+        <div class="form-group">
+            {{ form.perspectivaUORG.label(class="form-control-label") }}
+            {{ form.perspectivaUORG(class="form-control form-control-lg") }}
+        </div>
+        <div class="form-group">
+            {{ form.perspectivaOrgaos.label(class="form-control-label") }}
+            {{ form.perspectivaOrgaos(class="form-control form-control-lg") }}
+        </div>
+        <div class="form-group">
+            {{ form.metasPoliticasPublicas.label(class="form-control-label") }}
+            {{ form.metasPoliticasPublicas(class="form-control form-control-lg") }}
+        </div>
+    </div>
+</div>
