@@ -1,0 +1,54 @@
+{% extends 'layout.html' %}
+{% block content %}
+<div class="container-title">
+    <div class="title-text">Lista de projetos</div>
+    <div class="title-controls">
+        <div class="search-input-container">
+            <input type="text" class="search-input form-control-listagem" id="input-search" onkeyup="search()"
+                placeholder="Pesquisar...">
+        </div>
+        <div class="button-container">
+            <button class="btn btn-success me-md-2" onclick="registerProject()">Cadastrar novo projeto</button>
+        </div>
+    </div>
+</div>
+
+<div class="card-listagem">
+    <div class="table-container">
+        <!-- Cor do cabeçalho da tabela -->
+        <table class="table table-hover table-bordered center" data-toggle="table" data-search="true"
+            data-show-columns="true" id="table">
+            <!-- Tabela -->
+            <thead>
+                <!--Nome das colunas-->
+                <tr>
+                    <th scope="col">Nome do projeto</th>
+                    <th scope="col">Responsável</th>
+                    <th scope="col">Unidade responsável</th>
+                    <th scope="col">Processo SEI</th>
+                    <th scope="col">Categoria do projeto</th>
+                    <th scope="col">Situação do projeto</th>
+                    <th scope="col">Situação do TAP</th>
+                    <th scope="col">Prioridade</th>
+                    <th scope="col">Unidade Executora</th>
+                </tr>
+            </thead>
+            <!--Corpo da tabela-->
+            <tbody>
+                {% for projeto in projetos %}
+				{% for stakeholder in projeto.stakeholder %}
+                <tr>
+                    <td><a class="text-td" href="/atualizarprojeto/{{projeto.id}}">{{ projeto.nomeProjeto }}</a>
+                    </td>
+                    <td>{{ projeto.processoSEIProjeto }}</td>
+                    <td>{{ stakeholder.stk_parteInteressada }}</td>
+                    <td>{{ stakeholder.stk_expectativa }}</td>
+                    <td>{{ stakeholder.stk_requisito }}</td>
+                </tr>
+                {% endfor %}
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+{% endblock %}

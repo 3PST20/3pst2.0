@@ -1,0 +1,138 @@
+{% extends 'layout.html' %}
+{% block content %}
+<div class="card" id="abas">
+    <div class="title-text">Cadastro de projeto</div>
+    <div class="card-header">
+        <!--Barra de Cadastro-->
+        <ul class="nav nav-tabs" id="nav-tab" role="tablist">
+            <li class="nav-item">
+                <button data-bs-toggle="tab" class="nav-link active" id='nav-identificacao-tab'
+                    data-bs-target="#nav-identificacao" role='tab'
+                    aria-controls="nav-identificacao">Identificação</button>
+            </li>
+            <li class="nav-item">
+                <button data-bs-toggle="tab" class="nav-link" id='nav-alinhamento1-tab'
+                    data-bs-target="#nav-alinhamento1" role='tab' aria-controls="nav-alinhamento1">Alinhamento
+                    1</button>
+            </li>
+            <li class="nav-item">
+                <button data-bs-toggle="tab" class="nav-link" id='nav-alinhamento2-tab'
+                    data-bs-target="#nav-alinhamento2" role='tab' aria-controls="nav-alinhamento2">Alinhamento
+                    2</button>
+            </li>
+            <li class="nav-item">
+                <button data-bs-toggle="tab" class="nav-link" id='nav-geracaoImpacto-tab'
+                    data-bs-target="#nav-geracaoImpacto" role='tab' aria-controls="nav-geracaoImpacto">Geração de
+                    Impacto</button>
+            </li>
+            <li class="nav-item">
+                <button data-bs-toggle="tab" class="nav-link" id='nav-descricaoDetalhada-tab'
+                    data-bs-target="#nav-descricaoDetalhada" role='tab' aria-controls="nav-descricaoDetalhada">Descrição
+                    Detalhada</button>
+            </li>
+            <li class="nav-item">
+                <button data-bs-toggle="tab" class="nav-link" id='nav-stakeholders-tab'
+                    data-bs-target="#nav-stakeholders" role='tab' aria-controls="nav-stakeholders">Stakeholders</button>
+            </li>
+            <li class="nav-item">
+                <button data-bs-toggle="tab" class="nav-link" id='nav-escopo-tab' data-bs-target="#nav-escopo"
+                    role='tab' aria-controls="nav-escopo">Escopo</button>
+            </li>
+            <li class="nav-item">
+                <button data-bs-toggle="tab" class="nav-link" id='nav-equipe-tab' data-bs-target="#nav-equipe"
+                    role='tab' aria-controls="nav-equipe">Equipe</button>
+            </li>
+            <li class="nav-item">
+                <button data-bs-toggle="tab" class="nav-link" id='nav-custos-tab' data-bs-target="#nav-custos"
+                    role='tab' aria-controls="nav-custos">Custos e Plano Orçamentário</button>
+            </li>
+            <li class="nav-item">
+                <button data-bs-toggle="tab" class="nav-link" id='nav-riscos-tab' data-bs-target="#nav-riscos"
+                    role='tab' aria-controls="nav-riscos">Riscos</button>
+            </li>
+            <li class="nav-item">
+                <button data-bs-toggle="tab" class="nav-link" id='nav-historico-tab' data-bs-target="#nav-historico"
+                    role='tab' aria-controls="nav-historico">Histórico</button>
+            </li>
+        </ul>
+        <form method="POST" action="">
+            <div class="tab-content" id="nav-tabContent">
+                <br>
+                <!--Identificação-->
+                <div class="tab-pane show active" id="nav-identificacao" role="tabpanel"
+                    aria-labelledby="nav-identificacao-tab" tabindex="0">
+                    <!--  -->
+                    {% include 'projeto/identificacao.html' %}
+                </div>
+                <!--Alinhamento1-->
+                <div class="tab-pane" id="nav-alinhamento1" role="tabpanel" aria-labelledby="nav-alinhamento1-tab"
+                    tabindex="0">
+                    <!--  -->
+                    {% include 'projeto/alinhamento1.html' %}
+                </div>
+                <!--Alinhamento2-->
+                <div class="tab-pane" id="nav-alinhamento2" role="tabpanel" aria-labelledby="nav-alinhamento2-tab"
+                    tabindex="0">
+                    <!--  -->
+                    {% include 'projeto/alinhamento2.html' %}
+                </div>
+                <!--Geracao Impacto-->
+                <div class="tab-pane" id="nav-geracaoImpacto" role="tabpanel" aria-labelledby="nav-geracaoImpacto-tab"
+                    tabindex="0">
+                    <!--  -->
+                    {% include 'projeto/geracaoImpacto.html' %}
+                </div>
+                <!--Descricao Detalhada-->
+                <div class="tab-pane" id="nav-descricaoDetalhada" role="tabpanel" aria-labelledby="nav-descricaoDetalhada-tab"
+                    tabindex="0">
+                    <!--  -->
+                    {% include 'projeto/descricaoDetalhada.html' %}
+                </div>
+                <!--Stakeholders-->
+                <div class="tab-pane" id="nav-stakeholders" role="tabpanel" aria-labelledby="nav-stakeholders-tab"
+                    tabindex="0">
+                    <!--  -->
+                    {% include 'projeto/stakeholders.html' %}
+                </div>
+                <!--Escopo-->
+                <div class="tab-pane" id="nav-escopo" role="tabpanel" aria-labelledby="nav-escopo-tab"
+                    tabindex="0">
+                    <!--  -->
+                    {% include 'projeto/escopo.html' %}
+                </div>
+                <!--Equipe-->
+                <div class="tab-pane" id="nav-equipe" role="tabpanel" aria-labelledby="nav-equipe-tab"
+                    tabindex="0">
+                    <!--  -->
+                    {% include 'projeto/equipe.html' %}
+                </div>
+                <!--Custos-->
+                <div class="tab-pane" id="nav-custos" role="tabpanel" aria-labelledby="nav-custos-tab"
+                    tabindex="0">
+                    <!--  -->
+                    {% include 'projeto/custos.html' %}
+                </div>
+                <!--Riscos-->
+                <div class="tab-pane" id="nav-riscos" role="tabpanel" aria-labelledby="nav-riscos-tab"
+                    tabindex="0">
+                    <!--  -->
+                    {% include 'projeto/riscos.html' %}
+                </div>
+                <!--Historico-->
+                <div class="tab-pane" id="nav-historico" role="tabpanel" aria-labelledby="nav-historico-tab"
+                    tabindex="0">
+                    <!--  -->
+                    {% include 'projeto/historico.html' %}
+                </div>
+
+                <!--Botões: Salvar e cancelar-->
+                <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                    {{ form.salvar(class='btn btn-success') }}
+                    <button class="btn btn-outline-dark" type="button">Cancelar</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+{% endblock %}

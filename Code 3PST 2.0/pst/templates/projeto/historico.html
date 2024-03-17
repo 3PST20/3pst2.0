@@ -1,0 +1,19 @@
+{{ form.hidden_tag() }}
+<div class="row g-2 container-fluid">
+    <div class="col-md-6" id="lado_direito">
+        <div class="form-group">
+            {{ form.evento.label(class="form-control-label") }}
+            {{ form.evento(class="form-control form-control-lg") }}
+        </div>
+        <div class="form-group">
+            {{ form.dataRegistro.label(class="form-control-label") }}
+            {{ form.dataRegistro(class="form-control form-control-lg datepicker") }}
+        </div>
+    </div>
+    <div class="col-md-6" id="lado_esquerdo">
+        <div class="form-group">
+            {{ form.responsavelRegistro.label(class="form-control-label") }}
+            {{ form.responsavelRegistro(class="form-control form-control-lg") }}
+        </div>
+    </div>
+</div>

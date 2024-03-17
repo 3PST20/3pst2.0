@@ -1,0 +1,47 @@
+{{ form.hidden_tag() }}
+<div class="row g-2 container-fluid">
+    <div class="col-md-6" id="lado_direito">
+        <div class="form-group">
+            {{ form.objetivosEstrategicos.label(class="form-control-label") }}
+            {{ form.objetivosEstrategicos(class="form-control form-control-lg") }}
+        </div>
+        <div class="form-group">
+            {{ form.metasEstrategicas.label(class="form-control-label") }}
+            {{ form.metasEstrategicas(class="form-control form-control-lg") }}
+        </div>
+        <div class="form-group">
+            {{ form.periodoAlinha1.label(class="form-control-label") }}
+            {{ form.periodoAlinha1(class="form-control form-control-lg") }}
+        </div>
+        <div class="form-group">
+            {{ form.politicaNacional.label(class="form-control-label") }}
+            {{ form.politicaNacional(class="form-control form-control-lg") }}
+        </div>
+        <div class="form-group">
+            {{ form.programaPPA.label(class="form-control-label") }}
+            {{ form.programaPPA(class="form-control form-control-lg") }}
+        </div>
+        <div class="form-group">
+            {{ form.periodoProgramaPPA.label(class="form-control-label") }}
+            {{ form.periodoProgramaPPA(class="form-control form-control-lg") }}
+        </div>
+    </div>
+    <div class="col-md-6" id="lado_esquerdo">
+        <div class="form-group">
+            {{ form.evidenciaAlinha1ProgramaPPA.label(class="form-control-label") }}
+            {{ form.evidenciaAlinha1ProgramaPPA(class="form-control form-control-lg") }}
+        </div>
+        <div class="form-group">
+            {{ form.objetivoPPA.label(class="form-control-label") }}
+            {{ form.objetivoPPA(class="form-control form-control-lg") }}
+        </div>
+        <div class="form-group">
+            {{ form.periodoObjetivoPPA.label(class="form-control-label") }}
+            {{ form.periodoObjetivoPPA(class="form-control form-control-lg") }}
+        </div>
+        <div class="form-group">
+            {{ form.evidenciaAlinha1ObjetivoPPA.label(class="form-control-label") }}
+            {{ form.evidenciaAlinha1ObjetivoPPA(class="form-control form-control-lg") }}
+        </div>
+    </div>
+</div>

@@ -1,0 +1,23 @@
+{{ form.hidden_tag() }}
+<div class="row g-2 container-fluid">
+    <div class="col-md-6" id="lado_direito">
+        <div class="form-group">
+            {{ form.codigoAreaOrcamento.label(class="form-control-label") }}
+            {{ form.codigoAreaOrcamento(class="form-control form-control-lg") }}
+        </div>
+        <div class="form-group">
+            {{ form.orcamentoProjeto.label(class="form-control-label") }}
+            {{ form.orcamentoProjeto(class="form-control form-control-lg") }}
+        </div>
+    </div>
+    <div class="col-md-6" id="lado_esquerdo">
+        <div class="form-group">
+            {{ form.custoEstimado.label(class="form-control-label") }}
+            {{ form.custoEstimado(class="form-control form-control-lg") }}
+        </div>
+        <div class="form-group">
+            {{ form.observacaoCustoEstimado.label(class="form-control-label") }}
+            {{ form.observacaoCustoEstimado(class="form-control form-control-lg") }}
+        </div>
+    </div>
+</div>

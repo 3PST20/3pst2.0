@@ -1,0 +1,183 @@
+{{ form.hidden_tag() }}
+<div class="row g-2 container-fluid">
+    <div class="col-md-6" id="lado_direito">
+        <div class="form-group">
+            {{ form.nomeProjeto.label(class="form-control-label") }}
+            {% if form.nomeProjeto.errors %}
+            {{ form.nomeProjeto(class="form-control form-control-lg is-invalid") }}
+            <div class="invalid-feedback">
+                {% for error in form.nomeProjeto.errors %}
+                <span>{{ error }}</span>
+                {% endfor %}
+            </div>
+            {% else %}
+            {{ form.nomeProjeto(class="form-control form-control-lg") }}
+            {% endif %}
+        </div>
+        <div class="form-group">
+            {{ form.processoSEIProjeto.label(class="form-control-label") }}
+            {% if form.processoSEIProjeto.errors %}
+            {{ form.processoSEIProjeto(class="form-control form-control-lg is-invalid") }}
+            <div class="invalid-feedback">
+                {% for error in form.processoSEIProjeto.errors %}
+                <span>{{ error }}</span>
+                {% endfor %}
+            </div>
+            {% else %}
+            {{ form.processoSEIProjeto(class="form-control form-control-lg") }}
+            {% endif %}
+        </div>
+        <div class="form-group">
+            {{ form.programaAssociado.label(class="form-control-label") }}
+            {{ form.programaAssociado(class="form-control form-control-lg") }}
+        </div>
+        <div class="form-group">
+            {{ form.processoSEIPrograma.label(class="form-control-label") }}
+            {{ form.processoSEIPrograma(class="form-control form-control-lg") }}
+        </div>
+        <div class="form-group">
+            {{ form.responsavelProjeto.label(class="form-control-label") }}
+            {% if form.responsavelProjeto.errors %}
+            {{ form.responsavelProjeto(class="form-control form-control-lg is-invalid") }}
+            <div class="invalid-feedback">
+                {% for error in form.responsavelProjeto.errors %}
+                <span>{{ error }}</span>
+                {% endfor %}
+            </div>
+            {% else %}
+            {{ form.responsavelProjeto(class="form-control form-control-lg") }}
+            {% endif %}
+        </div>
+        <div class="form-group">
+            {{ form.unidadeResponsavel.label(class="form-control-label") }}
+            {% if form.unidadeResponsavel.errors %}
+            {{ form.unidadeResponsavel(class="form-control form-control-lg is-invalid") }}
+            <div class="invalid-feedback">
+                {% for error in form.unidadeResponsavel.errors %}
+                <span>{{ error }}</span>
+                {% endfor %}
+            </div>
+            {% else %}
+            {{ form.unidadeResponsavel(class="form-control form-control-lg") }}
+            {% endif %}
+        </div>
+        <div class="form-group">
+            {{ form.unidadeExecutora.label(class="form-control-label") }}
+            {% if form.unidadeExecutora.errors %}
+            {{ form.unidadeExecutora(class="form-control form-control-lg is-invalid") }}
+            <div class="invalid-feedback">
+                {% for error in form.unidadeExecutora.errors %}
+                <span>{{ error }}</span>
+                {% endfor %}
+            </div>
+            {% else %}
+            {{ form.unidadeExecutora(class="form-control form-control-lg") }}
+            {% endif %}
+        </div>
+        <div class="form-group">
+            {{ form.categoriaProjeto.label(class="form-control-label") }}
+            {% if form.categoriaProjeto.errors %}
+            {{ form.categoriaProjeto(class="form-control form-control-lg is-invalid") }}
+            <div class="invalid-feedback">
+                {% for error in form.categoriaProjeto.errors %}
+                <span>{{ error }}</span>
+                {% endfor %}
+            </div>
+            {% else %}
+            {{ form.categoriaProjeto(class="form-control form-control-lg") }}
+            {% endif %}
+        </div>
+        <div class="form-group">
+            {{ form.situacaoProjeto.label(class="form-control-label") }}
+            {% if form.situacaoProjeto.errors %}
+            {{ form.situacaoProjeto(class="form-control form-control-lg is-invalid") }}
+            <div class="invalid-feedback">
+                {% for error in form.situacaoProjeto.errors %}
+                <span>{{ error }}</span>
+                {% endfor %}
+            </div>
+            {% else %}
+            {{ form.situacaoProjeto(class="form-control form-control-lg") }}
+            {% endif %}
+        </div>
+        <div class="form-group">
+            {{ form.duracaoEstimadaProjeto.label(class="form-control-label") }}
+            {{ form.duracaoEstimadaProjeto(class="form-control form-control-lg") }}
+        </div>
+        <div class="form-group">
+            {{ form.dataInicioProjeto.label(class="form-control-label") }}
+            {{ form.dataInicioProjeto(class="form-control form-control-lg datepicker") }}
+        </div>
+        <div class="form-group">
+            {{ form.dataConclusaoProjeto.label(class="form-control-label") }}
+            {{ form.dataConclusaoProjeto(class="form-control form-control-lg datepicker") }}
+        </div>
+        <div class="form-group">
+            {{ form.situacaoTAP.label(class="form-control-label") }}
+            {% if form.situacaoTAP.errors %}
+            {{ form.situacaoTAP(class="form-control form-control-lg is-invalid") }}
+            <div class="invalid-feedback">
+                {% for error in form.situacaoTAP.errors %}
+                <span>{{ error }}</span>
+                {% endfor %}
+            </div>
+            {% else %}
+            {{ form.situacaoTAP(class="form-control form-control-lg") }}
+            {% endif %}
+        </div>
+        <div class="form-group">
+            {{ form.aprovacaoUORG.label(class="form-control-label") }}
+            {{ form.aprovacaoUORG(class="form-control form-control-lg datepicker") }}
+        </div>
+    </div>
+    <div class="col-md-6" id="lado_esquerdo">
+        <div class="form-group">
+            {{ form.aprovacaoPortfolio.label(class="form-control-label") }}
+            {{ form.aprovacaoPortfolio(class="form-control form-control-lg datepicker") }}
+        </div>
+        <div class="form-group">
+            {{ form.carregamentoSIGE3P.label(class="form-control-label") }}
+            {{ form.carregamentoSIGE3P(class="form-control form-control-lg datepicker") }}
+        </div>
+        <div class="form-group">
+            {{ form.objetoProjeto.label(class="form-control-label") }}
+            {{ form.objetoProjeto(class="form-control form-control-lg") }}
+        </div>
+        <div class="form-group">
+            {{ form.descricaoProjeto.label(class="form-control-label") }}
+            {{ form.descricaoProjeto(class="form-control form-control-lg") }}
+        </div>
+        <div class="form-group">
+            {{ form.prioridadeINPE.label(class="form-control-label") }}
+            {{ form.prioridadeINPE(class="form-control form-control-lg") }}
+        </div>
+        <div class="form-group">
+            {{ form.evidenciaPriorizacao.label(class="form-control-label") }}
+            {{ form.evidenciaPriorizacao(class="form-control form-control-lg") }}
+        </div>
+        <div class="form-group">
+            {{ form.tipoParceria.label(class="form-control-label") }}
+            {{ form.tipoParceria(class="form-control form-control-lg") }}
+        </div>
+        <div class="form-group">
+            {{ form.situacaoParceria.label(class="form-control-label") }}
+            {{ form.situacaoParceria(class="form-control form-control-lg") }}
+        </div>
+        <div class="form-group">
+            {{ form.processoSEIParceria.label(class="form-control-label") }}
+            {{ form.processoSEIParceria(class="form-control form-control-lg") }}
+        </div>
+        <div class="form-group">
+            {{ form.propriedadeIntelectual.label(class="form-control-label") }}
+            {{ form.propriedadeIntelectual(class="form-control form-control-lg") }}
+        </div>
+        <div class="form-group">
+            {{ form.faixaCustoTotalProjeto.label(class="form-control-label") }}
+            {{ form.faixaCustoTotalProjeto(class="form-control form-control-lg") }}
+        </div>
+        <div class="form-group">
+            {{ form.recursosFinanceiros.label(class="form-control-label") }}
+            {{ form.recursosFinanceiros(class="form-control form-control-lg") }}
+        </div>
+    </div>
+</div>
