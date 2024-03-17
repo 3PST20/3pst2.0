@@ -47,12 +47,8 @@
               <div class="local-toc"><ul>
 <li><a class="reference internal" href="#">Bem-vindo à documentação do 3PST_2.0.0!</a></li>
 <li><a class="reference internal" href="#partes-interessadas">Partes interessadas</a></li>
-<li><a class="reference internal" href="#documentos">Documentos</a><ul>
-<li><a class="reference internal" href="#habilitarInput"><code class="docutils literal notranslate"><span class="pre">habilitarInput()</span></code></a></li>
-<li><a class="reference internal" href="#downloadCSVFile"><code class="docutils literal notranslate"><span class="pre">downloadCSVFile()</span></code></a></li>
-<li><a class="reference internal" href="#htmlToCsv"><code class="docutils literal notranslate"><span class="pre">htmlToCsv()</span></code></a></li>
-</ul>
-</li>
+<li><a class="reference internal" href="#equipe-do-projeto-3pst-de-2024">Equipe do Projeto 3PST de 2024</a></li>
+<li><a class="reference internal" href="#documentos-javascript-com-jsdoc">Documentos JavaScript com JSDoc</a></li>
 <li><a class="reference internal" href="#indices-e-tabelas">Índices e tabelas</a></li>
 </ul>
 </div>
@@ -82,10 +78,19 @@
              
   <section id="bem-vindo-a-documentacao-do-3pst-2-0-0">
 <h1>Bem-vindo à documentação do 3PST_2.0.0!<a class="headerlink" href="#bem-vindo-a-documentacao-do-3pst-2-0-0" title="Link to this heading"></a></h1>
-<a class="reference external image-reference" href="https://www.gov.br/inpe/pt-br"><img alt="INPE" src="C:Usersere_mOneDriveDocumentosGitHub3pst2.0Doc_3PST_staticimginpelogo.png" /></a>
+<a class="reference external image-reference" href="https://www.gov.br/inpe/pt-br"><img alt="INPE" src="_images/inpelogo.png" /></a>
+<a class="reference external image-reference" href="https://github.com/3PST20"><img alt="3PST_2.0" src="_images/3pst.png" /></a>
 <p>3PST 2.0.0 – Sistema web para gestão do portfólio de
 Programas, Projetos, Produtos, Serviços e Tecnologias do INPE.</p>
 <div class="toctree-wrapper compound">
+</div>
+<div class="admonition note">
+<p class="admonition-title">Nota</p>
+<p>Abrir cmd e inserir o comando: <em>pip install flask</em></p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Nota</p>
+<p>Para rodar o programa no VS Code inserir o comando: <em>flask –app main –debug run</em></p>
 </div>
 </section>
 <section id="partes-interessadas">
@@ -96,52 +101,21 @@ Programas, Projetos, Produtos, Serviços e Tecnologias do INPE.</p>
 <li><p>Funcionários do INPE: funcionários da instituição que pretendem abrir TAPs, TAPgs e TAS.</p></li>
 </ul>
 </section>
-<section id="documentos">
-<h1>Documentos<a class="headerlink" href="#documentos" title="Link to this heading"></a></h1>
+<section id="equipe-do-projeto-3pst-de-2024">
+<h1>Equipe do Projeto 3PST de 2024<a class="headerlink" href="#equipe-do-projeto-3pst-de-2024" title="Link to this heading"></a></h1>
+<ul class="simple">
+<li><p>Alberto de Paula Silva</p></li>
+<li><p>Ana Carolina das Neves</p></li>
+<li><p>Ane Caroline Maciel de Lima</p></li>
+<li><p>Bárbara Alessandra Gonçalves Pinheiro Yamada</p></li>
+<li><p>Renato Henrique Ferreira Branco</p></li>
+<li><p>Viviane Ferreira da Silva de Macedo</p></li>
+</ul>
+</section>
+<section id="documentos-javascript-com-jsdoc">
+<h1>Documentos JavaScript com JSDoc<a class="headerlink" href="#documentos-javascript-com-jsdoc" title="Link to this heading"></a></h1>
 <div class="toctree-wrapper compound">
 </div>
-<dl class="js function">
-<dt class="sig sig-object js" id="habilitarInput">
-<span class="sig-name descname"><span class="n"><span class="pre">habilitarInput</span></span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">elemenId</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#habilitarInput" title="Link to this definition"></a></dt>
-<dd><p>A função <cite>habilitarInput()</cite> habilita todos os campos de entrada de um formulário e
-desabilita o botão “Alterar” ao ativar o botão “Salvar”.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Argumentos<span class="colon">:</span></dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>elemenId</strong> (<em>string</em>) – Retorna uma referência ao primeiro objeto com o valor especificado do atributo ID.</p></li>
-</ul>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="js function">
-<dt class="sig sig-object js" id="downloadCSVFile">
-<span class="sig-name descname"><span class="n"><span class="pre">downloadCSVFile</span></span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">csv</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">filename</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tagname</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#downloadCSVFile" title="Link to this definition"></a></dt>
-<dd><p>A função <cite>downloadCSVFile</cite> é responsável por criar um arquivo CSV e iniciar seu download.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Argumentos<span class="colon">:</span></dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>csv</strong> (<em>string</em>) – O parâmetro <cite>csv</cite> é uma string que representa o conteúdo do arquivo CSV que você deseja baixar.</p></li>
-<li><p><strong>filename</strong> (<em>string</em>) – O parâmetro ‘filename’ é uma string que especifica o nome do arquivo a ser baixado.</p></li>
-<li><p><strong>tagname</strong> (<em>string</em>) – Cria uma instância do elemento para a tag especificada.</p></li>
-</ul>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="js function">
-<dt class="sig sig-object js" id="htmlToCsv">
-<span class="sig-name descname"><span class="n"><span class="pre">htmlToCsv</span></span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filename</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#htmlToCsv" title="Link to this definition"></a></dt>
-<dd><p>A função <cite>htmlToCsv</cite> converte uma tabela HTML em um arquivo CSV e faz o download.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Argumentos<span class="colon">:</span></dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>filename</strong> (<em>string</em>) – O parâmetro <cite>filename</cite> é uma string que representa o nome do arquivo CSV que será baixado.</p></li>
-</ul>
-</dd>
-</dl>
-</dd></dl>
-
 </section>
 <section id="indices-e-tabelas">
 <h1>Índices e tabelas<a class="headerlink" href="#indices-e-tabelas" title="Link to this heading"></a></h1>
