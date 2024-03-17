@@ -6,9 +6,13 @@
 Bem-vindo à documentação do 3PST_2.0.0!
 ========================================
 
-.. image:: 'C:\\Users\\ere_m\\OneDrive\\Documentos\\GitHub\\3pst2.0\\pst2\\static\\js'
+.. image:: ../Doc_3PST/_build/html/_static/img/inpelogo.png
    :alt: INPE
    :target: https://www.gov.br/inpe/pt-br
+
+.. image:: ../Doc_3PST/_build/html/_static/img/3pst.png
+   :alt: 3PST_2.0
+   :target: https://github.com/3PST20
 
 3PST 2.0.0 – Sistema web para gestão do portfólio de 
 Programas, Projetos, Produtos, Serviços e Tecnologias do INPE.
@@ -17,6 +21,12 @@ Programas, Projetos, Produtos, Serviços e Tecnologias do INPE.
    :maxdepth: 2
    :caption: Contents:
 
+.. note:: 
+   Abrir cmd e inserir o comando: *pip install flask* 
+
+.. note::
+   Para rodar o programa no VS Code inserir o comando: *flask --app main --debug run*
+ 
 
 Partes interessadas
 ====================
@@ -25,16 +35,28 @@ Partes interessadas
 * Colaboradores da COGPI: colaboradores da coordenação, que participam indiretamente na gestão dos dados da carteira;
 * Funcionários do INPE: funcionários da instituição que pretendem abrir TAPs, TAPgs e TAS.
 
-Documentos
-===========
+Equipe do Projeto 3PST de 2024
+====================================
+
+* Alberto de Paula Silva
+* Ana Carolina das Neves
+* Ane Caroline Maciel de Lima
+* Bárbara Alessandra Gonçalves Pinheiro Yamada
+* Renato Henrique Ferreira Branco
+* Viviane Ferreira da Silva de Macedo
+
+Documentos JavaScript com JSDoc
+===============================
 
 .. toctree::
-   :caption: Documentos
+   :caption: Documentos JavaScript
    :maxdepth: 2
+   
 
 .. js:autofunction:: habilitarInput
 .. js:autofunction:: downloadCSVFile
 .. js:autofunction:: htmlToCsv
+
 
 Índices e tabelas
 ==================
@@ -42,5 +64,9 @@ Documentos
 * :ref:`genindex`
 * :ref:`modindex`
 * :ref:`search`
+
+
+
+
 
 
