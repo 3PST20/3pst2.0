@@ -1,0 +1,62 @@
+{% extends 'layout.html' %}
+{% block content %}
+  <div class="image-inpe"><a href="https://www.gov.br/inpe/pt-br" target="_blank"><img class="img-fluid"
+    src="../static/img/logo_aniversário_INPE.jpeg" alt="logo-aniversario-inpe"></a>
+  </div>
+
+  <!--cards -->
+  <div class="container-fluid">
+    <div class="row centered">
+      <div class="col-md-2 box">
+        <a href="{{ url_for('projeto.listar_projetos') }}"><img class="image-card" src="../static/img/projeto.jpg" alt="img-cadastrarprojeto">
+          <p class="text-card">Projetos</p>
+        </a>
+      </div>
+      <div class="col-md-2 box">
+        <a><img class="image-card" src="../static/img/programa.jpg"
+            alt="img-cadastrarprograma">
+          <p class="text-card">Programas</p>
+        </a>
+      </div>
+      <div class="col-md-2 box">
+        <a><img class="image-card" src="../static/img/servico.jpg" alt="img-cadastrarservico">
+          <p class="text-card">Serviços</p>
+        </a>
+      </div>
+    </div>
+
+    <div class="row centered">
+      <div class="col-md-2 box">
+        <a><img class="image-card" src="../static/img/colaboradorinpe.jpg"
+            alt="img-cadastrarcolaboradorinpe">
+          <p class="text-card">Colaborador</p>
+        </a>
+      </div>
+      <div class="col-md-2 box">
+        <a><img class="image-card" src="../static/img/organizacaoexterna.jpg"
+            alt="img-cadastrarorganizacaoexterna">
+          <p class="text-card">Organização</p>
+        </a>
+      </div>
+      <div class="col-md-2 box">
+        <a><img class="image-card" src="../static/img/iniciativas.jpg"
+            alt="img-catalogodeiniciativasinstitucionais">
+          <p class="text-card">Catálogo de <br>Iniciativas Institucionais</p>
+        </a>
+      </div>
+    </div>
+
+    <div class="row centered">
+      <div class="col-md-2 box">
+        <a><img class="image-card" style="width: 90px;"
+            src="../static/img/projetosxprogramas.jpg" alt="img-projetosxprogramas">
+          <p class="text-card">Projetos x Programas</p>
+        </a>
+      </div>
+      <div class="col-md-2 box">
+        <br><a><img class="image-card" style="width: 60px; height: 50px;" src="../static/img/3pst.png"
+            alt="img-sobre"><br><p class="text-card">Sobre</p></a>
+      </div>
+    </div>
+  </div>
+{% endblock %}

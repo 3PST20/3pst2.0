@@ -1,0 +1,23 @@
+{{ form.hidden_tag() }}
+<div class="row g-2 container-fluid">
+    <div class="col-md-6" id="lado_direito">
+        <div class="form-group">
+            {{ form.nomeProfissional.label(class="form-control-label") }}
+            {{ form.nomeProfissional(class="form-control form-control-lg") }}
+        </div>
+        <div class="form-group">
+            {{ form.vinculoINPE.label(class="form-control-label") }}
+            {{ form.vinculoINPE(class="form-control form-control-lg") }}
+        </div>
+    </div>
+    <div class="col-md-6" id="lado_esquerdo">
+        <div class="form-group">
+            {{ form.organizacoesExterna.label(class="form-control-label") }}
+            {{ form.organizacoesExterna(class="form-control form-control-lg") }}
+        </div>
+        <div class="form-group">
+            {{ form.nomeProfissionalExterno.label(class="form-control-label") }}
+            {{ form.nomeProfissionalExterno(class="form-control form-control-lg") }}
+        </div>
+    </div>
+</div>
