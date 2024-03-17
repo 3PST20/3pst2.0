@@ -1,0 +1,6 @@
+=============
+Documentos JS
+=============
+
+Documentação JavaScript gerada usando JSDoc para controle.
+
