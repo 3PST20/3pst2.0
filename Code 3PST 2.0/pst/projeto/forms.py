@@ -1,6 +1,6 @@
 from flask_wtf import FlaskForm
 from wtforms import StringField, SubmitField, TextAreaField, SelectField, DateField
-from wtforms.validators import DataRequired
+from wtforms.validators import DataRequired, Optional
 
 class ProjetoForm(FlaskForm):
     #identificacao
@@ -9,18 +9,18 @@ class ProjetoForm(FlaskForm):
     protocoloSEIUltimoTAP = StringField('Protocolo SEI da última versão do TAP que foi aprovada para compor o Portfólio Institucional')
     programaAssociado = SelectField('Programa Associado', choices=[('1', 'One'), ('2', 'Two'), ('3', 'Three')])
     processoSEIPrograma = SelectField('Processo SEI do Programa Associado', choices=[('1', 'One'), ('2', 'Two'), ('3', 'Three')])
-    responsavelProjeto = SelectField('Responsável pelo Projeto', validators=[DataRequired()], choices=[('1', 'One'), ('2', 'Two'), ('3', 'Three')])
-    unidadeResponsavel = SelectField('Unidade Responsável', validators=[DataRequired()], choices=[('1', 'One'), ('2', 'Two'), ('3', 'Three')])
-    unidadeExecutora = SelectField('Unidade(s) Executora(s)', validators=[DataRequired()], choices=[('1', 'One'), ('2', 'Two'), ('3', 'Three')])
-    categoriaProjeto = SelectField('Categoria do Projeto', validators=[DataRequired()], choices=[('1', 'One'), ('2', 'Two'), ('3', 'Three')])
-    situacaoProjeto = SelectField('Situação do Projeto', validators=[DataRequired()], choices=[('1', 'One'), ('2', 'Two'), ('3', 'Three')])
+    responsavelProjeto = SelectField('Responsável pelo Projeto', choices=[('1', 'One'), ('2', 'Two'), ('3', 'Three')], validators=[DataRequired()])
+    unidadeResponsavel = SelectField('Unidade Responsável', choices=[('1', 'One'), ('2', 'Two'), ('3', 'Three')], validators=[DataRequired()])
+    unidadeExecutora = SelectField('Unidade(s) Executora(s)', choices=[('1', 'One'), ('2', 'Two'), ('3', 'Three')], validators=[DataRequired()])
+    categoriaProjeto = SelectField('Categoria do Projeto', choices=[('1', 'One'), ('2', 'Two'), ('3', 'Three')], validators=[DataRequired()])
+    situacaoProjeto = SelectField('Situação do Projeto', choices=[('1', 'One'), ('2', 'Two'), ('3', 'Three')], validators=[DataRequired()])
     duracaoEstimadaProjeto = StringField('Duração Estimada do Projeto (meses)')
-    dataInicioProjeto = DateField('Data de Início do Projeto', format='%d-%m-%Y')
-    dataConclusaoProjeto = DateField('Data de Conclusão do Projeto', format='%d-%m-%Y')
-    situacaoTAP = SelectField('Situação do TAP', validators=[DataRequired()], choices=[('1', 'One'), ('2', 'Two'), ('3', 'Three')])
-    aprovacaoUORG = DateField('Aprovação da UORG', format='%d-%m-%Y')
-    aprovacaoPortfolio = DateField('Aprovação para Portfólio INPE', format='%d-%m-%Y')
-    carregamentoSIGE3P = DateField('Carregamento no SIGE3P', format='%d-%m-%Y')
+    situacaoTAP = SelectField('Situação do TAP', choices=[('1', 'One'), ('2', 'Two'), ('3', 'Three')], validators=[DataRequired()])
+    dataInicioProjeto = DateField('Data de Início do Projeto', format='%Y-%m-%d', validators=[Optional()])
+    dataConclusaoProjeto = DateField('Data de Conclusão do Projeto', format='%Y-%m-%d', validators=[Optional()])
+    aprovacaoUORG = DateField('Aprovação da UORG', format='%Y-%m-%d', validators=[Optional()])
+    aprovacaoPortfolio = DateField('Aprovação para Portfólio INPE', format='%Y-%m-%d', validators=[Optional()])
+    carregamentoSIGE3P = DateField('Carregamento no SIGE3P', format='%Y-%m-%d', validators=[Optional()])
     objetoProjeto = TextAreaField('Objeto do Projeto')
     descricaoProjeto = TextAreaField('Descrição do Projeto')
     prioridadeINPE = SelectField('Prioridade INPE', choices=[('1', 'One'), ('2', 'Two'), ('3', 'Three')])
@@ -114,13 +114,16 @@ class ProjetoForm(FlaskForm):
     orcamentoProjeto = TextAreaField('Estruturado orçamento do projeto')
     custoEstimado = StringField('Custo total estimado(R$)')
     observacaoCustoEstimado = StringField('Observações sobre o Custo total estimado(R$)')
+    disponibilidadeOrcamentaria = SelectField('Disponibilidade Orçamentária/Financeira e Parcerias Captação de Recursos Próprios', choices=[('1', 'One'), ('2', 'Two'), ('3', 'Three')])
+    valorDisponivel = StringField('Valor Disponível')
+    instituicao = SelectField('Instituição', choices=[('1', 'One'), ('2', 'Two'), ('3', 'Three')])
 
     #Riscos
     riscosProjeto = TextAreaField('Riscos do Projeto')
 
     #Histórico
     evento = StringField('Evento')
-    dataRegistro = DateField('Data do registro', format='%d-%m-%Y')
+    dataRegistro = DateField('Data do registro', format='%Y-%m-%d', validators=[Optional()])
     responsavelRegistro = SelectField('Responsável pelo registro', choices=[('1', 'One'), ('2', 'Two'), ('3', 'Three')])
 
     salvar = SubmitField('Salvar')
