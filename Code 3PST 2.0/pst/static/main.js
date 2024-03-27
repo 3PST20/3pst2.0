@@ -1,7 +1,7 @@
 /**
  * A função de pesquisa filtra uma tabela com base na entrada do usuário.
  * @date 2024-02-07
- * @author Ana Carolina Neves
+ * @author Ana Carolina das Neves
  * @version 2.0.0 - A versão do projero 3PST.
  */
 function search() {
@@ -30,7 +30,7 @@ function search() {
  * A função "registerProject" solicita ao usuário que confirme se deseja registrar 
  * um novo projeto e os redireciona para a página de registro se confirmarem.
  * @date 2024-02-07
- * @author Ana Carolina Neves
+ * @author Ana Carolina das Neves
  * @version 2.0.0 - A versão do projero 3PST.
  */
 function registerProject() {
