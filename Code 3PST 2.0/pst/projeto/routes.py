@@ -11,6 +11,8 @@ projeto = Blueprint('projeto', __name__)
 def listar_projetos():
     """
     Retorna uma página HTML com a listagem de projetos.
+    Autor: Ana Carolina das Neves
+    Data: 22/03/2024
 
     :return: Página HTML com a listagem de projetos.
     :rtype: flask.Response
